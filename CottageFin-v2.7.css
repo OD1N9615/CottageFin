@@ -1,0 +1,1348 @@
+/* ==========================================================================
+   COTTAGEFIN v2.7
+   Cream header, coffee background, cream cards
+   Small coffee-coloured section pills
+   Solid coffee background; card play buttons only in Continue Watching
+   ========================================================================== */
+
+
+/* ==========================================================================
+   FONTS
+   ========================================================================== */
+
+@import url("https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Nunito:wght@400;500;600;700&display=swap");
+
+
+/* ==========================================================================
+   COLOUR PALETTE
+   ========================================================================== */
+
+:root {
+    --cottage-cream: #f8e9c7;
+    --cottage-cream-light: #fff4d8;
+    --cottage-cream-dark: #ead2a3;
+
+    --coffee-deep: #3f210f;
+    --coffee-dark: #512c16;
+    --coffee-main: #684020;
+    --coffee-soft: #9f744d;
+
+    --text-dark: #442712;
+    --text-medium: #765137;
+    --text-light: #fff4dc;
+
+    --caramel: #b77d2d;
+    --gold: #d5a044;
+
+    --radius-small: 8px;
+    --radius-medium: 13px;
+    --radius-large: 18px;
+}
+
+
+/* ==========================================================================
+   GLOBAL FOUNDATION
+   ========================================================================== */
+
+html,
+body {
+    background: var(--coffee-dark) !important;
+    color: var(--text-light) !important;
+    font-family: "Nunito", sans-serif !important;
+}
+
+body,
+button,
+input,
+select,
+textarea {
+    font-family: "Nunito", sans-serif !important;
+}
+
+.backgroundContainer {
+    background: var(--coffee-dark) !important;
+}
+
+.mainAnimatedPage,
+.page,
+.pageWithAbsoluteTabs,
+.libraryPage,
+.homePage {
+    background: transparent !important;
+}
+
+
+/* ==========================================================================
+   TYPOGRAPHY
+   ========================================================================== */
+
+.sectionTitle,
+.pageTitle,
+.itemName,
+.itemName-primary,
+.detailPagePrimaryContainer h1,
+.detailPagePrimaryContainer h2,
+.detailPageContent h1,
+.detailPageContent h2,
+.formDialogHeaderTitle {
+    color: var(--text-light) !important;
+    font-family: "DM Serif Display", Georgia, serif !important;
+    font-weight: 400 !important;
+    letter-spacing: 0.015em !important;
+}
+
+.sectionTitle {
+    color: var(--cottage-cream-light) !important;
+    font-size: 1.55rem !important;
+    line-height: 1.15 !important;
+    text-transform: none !important;
+}
+
+.cardText,
+.cardText-first,
+.cardText-secondary,
+.cardBox .itemName,
+.cardBox .primaryText {
+    color: var(--text-dark) !important;
+}
+
+.cardText-first {
+    font-weight: 700 !important;
+}
+
+.cardText-secondary,
+.cardBox .secondaryText {
+    color: var(--text-medium) !important;
+}
+
+body .primaryText,
+body .listItemBodyText,
+body .itemOverview,
+body .overview,
+body .mediaInfoItem,
+body .metadata {
+    color: var(--text-light);
+}
+
+body .secondaryText,
+body .listItemBodyText-secondary,
+body .fieldDescription {
+    color: rgba(255, 239, 208, 0.76);
+}
+
+
+/* ==========================================================================
+   CREAM TOP HEADER
+   ========================================================================== */
+
+.skinHeader,
+.skinHeader-withBackground {
+    color: var(--text-dark) !important;
+    background: var(--cottage-cream) !important;
+    border-bottom: 1px solid rgba(69, 37, 16, 0.2) !important;
+    box-shadow: 0 5px 18px rgba(25, 10, 2, 0.32) !important;
+    backdrop-filter: none !important;
+}
+
+.skinHeader *,
+.headerTop *,
+.headerTabs *,
+.headerRight * {
+    color: var(--text-dark) !important;
+}
+
+.headerTabs {
+    background: transparent !important;
+}
+
+.emby-tab-button {
+    color: rgba(68, 39, 18, 0.72) !important;
+    background: transparent !important;
+    border-radius: 999px !important;
+    font-weight: 600 !important;
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+}
+
+.emby-tab-button:hover {
+    color: var(--text-dark) !important;
+    background: rgba(104, 64, 32, 0.1) !important;
+}
+
+.emby-tab-button-active {
+    color: var(--text-dark) !important;
+    background: rgba(104, 64, 32, 0.15) !important;
+}
+
+.skinHeader .emby-button,
+.skinHeader .headerButton {
+    color: var(--text-dark) !important;
+    background: transparent !important;
+    border: 0 !important;
+    box-shadow: none !important;
+}
+
+.skinHeader .emby-button:hover,
+.skinHeader .headerButton:hover {
+    background: rgba(104, 64, 32, 0.11) !important;
+}
+
+.headerButton .material-icons,
+.headerButton .material-icons-round {
+    color: var(--text-dark) !important;
+}
+
+
+/* ==========================================================================
+   SIDE DRAWER
+   ========================================================================== */
+
+.mainDrawer {
+    color: var(--text-dark) !important;
+    background: var(--cottage-cream-light) !important;
+    border-right: 1px solid rgba(68, 39, 18, 0.18) !important;
+    box-shadow: 8px 0 28px rgba(25, 10, 2, 0.28) !important;
+}
+
+.navMenuOption {
+    color: var(--text-dark) !important;
+    background: transparent !important;
+    border-radius: var(--radius-medium) !important;
+    margin: 4px 10px !important;
+}
+
+.navMenuOption:hover {
+    background: rgba(104, 64, 32, 0.11) !important;
+}
+
+.navMenuOption-selected {
+    color: var(--text-dark) !important;
+    background: rgba(104, 64, 32, 0.18) !important;
+    box-shadow: inset 4px 0 0 var(--caramel) !important;
+}
+
+.navMenuOption .material-icons,
+.navMenuOption .material-icons-round {
+    color: var(--coffee-main) !important;
+}
+
+
+/* ==========================================================================
+   HOME SECTIONS
+   ========================================================================== */
+
+.homeSectionsContainer {
+    padding-top: 1.2rem !important;
+}
+
+.homeSectionsContainer section,
+.homeSectionsContainer .homeSection {
+    margin-bottom: 2.15rem !important;
+}
+
+.sectionTitleContainer {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+
+    width: auto !important;
+    min-height: 2.5rem !important;
+
+    margin: 0 3.3% 0.7rem !important;
+    padding: 0 !important;
+
+    color: var(--text-light) !important;
+    background: transparent !important;
+    border: 0 !important;
+    box-shadow: none !important;
+}
+
+
+/* ==========================================================================
+   SMALL SECTION TITLE PILLS
+   Next Up, Recently Added, etc.
+   ========================================================================== */
+
+body .sectionTitleTextButton,
+body .sectionTitleTextButton.emby-button,
+body button.sectionTitleTextButton {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    flex: 0 0 auto !important;
+
+    width: auto !important;
+    max-width: max-content !important;
+    min-width: 0 !important;
+    min-height: 2.15rem !important;
+
+    margin: 0 !important;
+    padding: 0.35rem 1rem !important;
+
+    color: var(--cottage-cream-light) !important;
+    background: var(--coffee-soft) !important;
+
+    border: 1px solid rgba(255, 244, 216, 0.52) !important;
+    border-radius: 11px !important;
+
+    box-shadow:
+        0 4px 10px rgba(20, 8, 2, 0.28),
+        inset 0 1px 0 rgba(255, 255, 255, 0.12) !important;
+
+    font-family: "Nunito", sans-serif !important;
+    font-size: 1.05rem !important;
+    font-weight: 600 !important;
+    line-height: 1.2 !important;
+    letter-spacing: 0.01em !important;
+
+    text-align: center !important;
+    text-shadow: none !important;
+    text-transform: none !important;
+
+    transform: none !important;
+
+    transition:
+        color 160ms ease,
+        background-color 160ms ease,
+        border-color 160ms ease,
+        transform 160ms ease,
+        box-shadow 160ms ease !important;
+}
+
+body .sectionTitleTextButton:hover,
+body .sectionTitleTextButton.emby-button:hover,
+body button.sectionTitleTextButton:hover {
+    color: var(--cottage-cream-light) !important;
+    background: var(--coffee-main) !important;
+    border-color: var(--cottage-cream) !important;
+
+    box-shadow:
+        0 6px 14px rgba(20, 8, 2, 0.36),
+        inset 0 1px 0 rgba(255, 255, 255, 0.15) !important;
+
+    transform: translateY(-1px) !important;
+}
+
+/* Raise text only, leaving the arrow centred */
+.sectionTitleTextButton .button-text,
+.sectionTitleTextButton .buttonText,
+.sectionTitleTextButton span:not(.material-icons):not(.material-icons-round) {
+    position: relative !important;
+    top: -1px !important;
+}
+
+body .sectionTitleTextButton .material-icons,
+body .sectionTitleTextButton .material-icons-round {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    margin-left: 0.5rem !important;
+
+    color: var(--cottage-cream-light) !important;
+    font-size: 1rem !important;
+    line-height: 1 !important;
+    transform: none !important;
+}
+
+
+/* Hide duplicate section action button */
+
+.sectionTitleContainer > .sectionTitleButton {
+    display: none !important;
+}
+
+
+/* Carousel arrows remain at the right */
+
+.listPagingButtons {
+    display: flex !important;
+    align-items: center !important;
+    gap: 0.4rem !important;
+
+    margin-left: auto !important;
+
+    background: transparent !important;
+}
+
+.listPagingButton {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    width: 2rem !important;
+    min-width: 2rem !important;
+    height: 2rem !important;
+    min-height: 2rem !important;
+
+    padding: 0 !important;
+
+    color: var(--cottage-cream-light) !important;
+    background: rgba(63, 33, 15, 0.7) !important;
+    border: 1px solid rgba(255, 244, 216, 0.42) !important;
+    border-radius: 999px !important;
+
+    box-shadow: 0 3px 8px rgba(20, 8, 2, 0.24) !important;
+}
+
+.listPagingButton:hover {
+    color: var(--coffee-deep) !important;
+    background: var(--cottage-cream) !important;
+}
+
+
+/* ==========================================================================
+   CARD LAYOUT
+   ========================================================================== */
+
+.itemsContainer {
+    gap: 1rem !important;
+}
+
+.horizontalItemsContainer {
+    column-gap: 1rem !important;
+}
+
+.vertical-wrap {
+    gap: 1.2rem !important;
+}
+
+.card {
+    padding: 0.25rem !important;
+}
+
+.cardBox {
+    color: var(--text-dark) !important;
+    background: var(--cottage-cream-light) !important;
+
+    border: 1px solid rgba(67, 35, 14, 0.2) !important;
+    border-radius: var(--radius-medium) !important;
+
+    box-shadow:
+        0 8px 18px rgba(20, 8, 2, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.65) !important;
+
+    overflow: hidden !important;
+
+    transition:
+        transform 180ms ease,
+        box-shadow 180ms ease,
+        border-color 180ms ease !important;
+}
+
+.cardBox:hover {
+    transform: translateY(-4px) !important;
+    border-color: rgba(213, 160, 68, 0.8) !important;
+
+    box-shadow:
+        0 13px 27px rgba(20, 8, 2, 0.4),
+        0 0 0 1px rgba(213, 160, 68, 0.22),
+        inset 0 1px 0 rgba(255, 255, 255, 0.75) !important;
+}
+
+.cardScalable,
+.cardImageContainer,
+.cardImage {
+    border-radius: calc(var(--radius-medium) - 2px) !important;
+}
+
+.cardImageContainer {
+    overflow: hidden !important;
+}
+
+.cardImage {
+    transition:
+        transform 240ms ease,
+        filter 240ms ease !important;
+}
+
+.cardBox:hover .cardImage {
+    transform: scale(1.012);
+    filter: saturate(1.04) brightness(1.025);
+}
+
+.cardText {
+    padding-left: 0.65rem !important;
+    padding-right: 0.65rem !important;
+}
+
+.cardText-first {
+    padding-top: 0.52rem !important;
+    color: var(--text-dark) !important;
+    font-weight: 700 !important;
+}
+
+.cardText-secondary {
+    padding-bottom: 0.52rem !important;
+    color: var(--text-medium) !important;
+}
+
+
+/* ==========================================================================
+   CARD OVERLAYS
+   ========================================================================== */
+
+.cardOverlayContainer {
+    background: linear-gradient(
+        180deg,
+        transparent 40%,
+        rgba(40, 17, 5, 0.78) 100%
+    ) !important;
+}
+
+.cardOverlayButton,
+.cardOverlayButton-br {
+    color: var(--text-dark) !important;
+    background: var(--cottage-cream) !important;
+    border: 1px solid rgba(68, 39, 18, 0.22) !important;
+    border-radius: 999px !important;
+}
+
+.cardOverlayButton:hover,
+.cardOverlayButton-br:hover {
+    color: var(--cottage-cream-light) !important;
+    background: var(--coffee-main) !important;
+}
+
+
+
+/* ==========================================================================
+   CARD PLAY BUTTON VISIBILITY
+   Hide card play controls everywhere except Continue Watching.
+   Several selectors are included to cover Jellyfin web-client variants.
+   ========================================================================== */
+
+/* Hide only play controls, leaving menus and other card actions available. */
+.card .cardOverlayFab-primary,
+.card .playButton,
+.card .playButtonContainer,
+.card button[data-action="play"],
+.card button[is="emby-button"][title="Play"],
+.card button[aria-label="Play"] {
+    display: none !important;
+}
+
+/* Restore play controls inside Jellyfin's common Continue Watching containers. */
+.resumeItems .cardOverlayFab-primary,
+.resumeItems .playButton,
+.resumeItems .playButtonContainer,
+.resumeItems button[data-action="play"],
+.resumeItems button[is="emby-button"][title="Play"],
+.resumeItems button[aria-label="Play"],
+.continueWatching .cardOverlayFab-primary,
+.continueWatching .playButton,
+.continueWatching .playButtonContainer,
+.continueWatching button[data-action="play"],
+.continueWatching button[is="emby-button"][title="Play"],
+.continueWatching button[aria-label="Play"],
+.continueWatchingItems .cardOverlayFab-primary,
+.continueWatchingItems .playButton,
+.continueWatchingItems .playButtonContainer,
+.continueWatchingItems button[data-action="play"],
+.continueWatchingItems button[is="emby-button"][title="Play"],
+.continueWatchingItems button[aria-label="Play"] {
+    display: inline-flex !important;
+}
+
+/*
+   Modern-browser fallback: Continue Watching cards carry a playback progress
+   bar. This keeps their play control visible even when Jellyfin changes the
+   surrounding section class.
+*/
+.card:has(.itemProgressBar) .cardOverlayFab-primary,
+.card:has(.itemProgressBar) .playButton,
+.card:has(.itemProgressBar) .playButtonContainer,
+.card:has(.itemProgressBar) button[data-action="play"],
+.card:has(.itemProgressBar) button[is="emby-button"][title="Play"],
+.card:has(.itemProgressBar) button[aria-label="Play"] {
+    display: inline-flex !important;
+}
+
+
+/* ==========================================================================
+   PROGRESS BARS
+   ========================================================================== */
+
+.itemProgressBar,
+.mdl-slider-background-flex {
+    background: rgba(57, 26, 8, 0.58) !important;
+}
+
+.itemProgressBarForeground,
+.mdl-slider-background-lower {
+    background: var(--gold) !important;
+}
+
+
+/* ==========================================================================
+   GENERAL BUTTONS
+   ========================================================================== */
+
+.emby-button,
+.button-submit,
+.raised,
+.fab {
+    color: var(--text-dark) !important;
+    background: var(--cottage-cream) !important;
+
+    border: 1px solid rgba(68, 39, 18, 0.22) !important;
+    border-radius: var(--radius-medium) !important;
+
+    box-shadow: 0 4px 10px rgba(20, 8, 2, 0.22) !important;
+
+    transition:
+        color 160ms ease,
+        background-color 160ms ease,
+        transform 160ms ease,
+        box-shadow 160ms ease !important;
+}
+
+.emby-button:hover,
+.button-submit:hover,
+.raised:hover,
+.fab:hover {
+    color: var(--cottage-cream-light) !important;
+    background: var(--coffee-soft) !important;
+
+    transform: translateY(-1px);
+
+    box-shadow: 0 6px 14px rgba(20, 8, 2, 0.28) !important;
+}
+
+.skinHeader .emby-button,
+.skinHeader .headerButton {
+    color: var(--text-dark) !important;
+    background: transparent !important;
+    border: 0 !important;
+    box-shadow: none !important;
+}
+
+.skinHeader .emby-button:hover,
+.skinHeader .headerButton:hover {
+    color: var(--text-dark) !important;
+    background: rgba(104, 64, 32, 0.11) !important;
+}
+
+
+/* ==========================================================================
+   INPUTS
+   ========================================================================== */
+
+.emby-input,
+.emby-select,
+.emby-textarea {
+    color: var(--text-dark) !important;
+    background: var(--cottage-cream-light) !important;
+
+    border: 1px solid rgba(68, 39, 18, 0.3) !important;
+    border-radius: var(--radius-small) !important;
+
+    box-shadow: inset 0 1px 2px rgba(40, 17, 5, 0.1) !important;
+}
+
+.emby-input:focus,
+.emby-select:focus,
+.emby-textarea:focus {
+    border-color: var(--caramel) !important;
+    box-shadow: 0 0 0 3px rgba(183, 125, 45, 0.2) !important;
+}
+
+.inputLabel,
+.selectLabel,
+.textareaLabel {
+    color: var(--cottage-cream-light) !important;
+}
+
+
+/* ==========================================================================
+   DIALOGS AND POPUPS
+   ========================================================================== */
+
+.dialog,
+.formDialog,
+.actionSheet,
+.listPopupMenu,
+.focuscontainer,
+.toast {
+    color: var(--text-dark) !important;
+    background: var(--cottage-cream-light) !important;
+
+    border: 1px solid rgba(68, 39, 18, 0.24) !important;
+    border-radius: var(--radius-medium) !important;
+
+    box-shadow: 0 18px 44px rgba(20, 8, 2, 0.42) !important;
+}
+
+.dialogHeader,
+.formDialogHeader {
+    color: var(--text-dark) !important;
+    background: var(--cottage-cream) !important;
+}
+
+.actionSheetMenuItem,
+.listPopupMenuItem {
+    color: var(--text-dark) !important;
+}
+
+.actionSheetMenuItem:hover,
+.listPopupMenuItem:hover {
+    background: rgba(104, 64, 32, 0.12) !important;
+}
+
+
+/* ==========================================================================
+   LISTS
+   ========================================================================== */
+
+.paperList,
+.listItem {
+    color: var(--text-dark) !important;
+    background: var(--cottage-cream-light) !important;
+    border-color: rgba(68, 39, 18, 0.14) !important;
+}
+
+.listItem {
+    border-radius: var(--radius-small) !important;
+}
+
+.listItem:hover {
+    background: var(--cottage-cream-dark) !important;
+}
+
+.listItem .primaryText,
+.listItem .listItemBodyText {
+    color: var(--text-dark) !important;
+}
+
+.listItem .secondaryText,
+.listItem .listItemBodyText-secondary {
+    color: var(--text-medium) !important;
+}
+
+
+/* ==========================================================================
+   DETAIL PAGES
+   ========================================================================== */
+
+.detailPagePrimaryContainer,
+.detailPageContent {
+    color: var(--text-light) !important;
+}
+
+.detailPagePrimaryContent {
+    background: linear-gradient(
+        180deg,
+        rgba(63, 33, 15, 0.05),
+        rgba(63, 33, 15, 0.75)
+    ) !important;
+}
+
+.detailPagePrimaryContainer h1,
+.detailPagePrimaryContainer h2,
+.detailPageContent h1,
+.detailPageContent h2 {
+    color: var(--cottage-cream-light) !important;
+}
+
+.itemDetailImage,
+.detailImageContainer .cardBox {
+    border-radius: var(--radius-large) !important;
+    box-shadow: 0 14px 34px rgba(20, 8, 2, 0.4) !important;
+}
+
+.detailButton {
+    color: var(--text-dark) !important;
+    background: var(--cottage-cream) !important;
+    border-radius: 999px !important;
+}
+
+.detailButton:hover {
+    color: var(--cottage-cream-light) !important;
+    background: var(--coffee-soft) !important;
+}
+
+.detailPageWrapperContainer::before {
+    background: linear-gradient(
+        180deg,
+        rgba(48, 21, 7, 0.08) 0%,
+        rgba(63, 33, 15, 0.72) 66%,
+        var(--coffee-deep) 100%
+    ) !important;
+}
+
+
+/* ==========================================================================
+   CHECKBOXES AND SWITCHES
+   ========================================================================== */
+
+.checkboxOutline {
+    border-color: var(--caramel) !important;
+}
+
+.emby-checkbox:checked + span + .checkboxOutline,
+.emby-checkbox:checked + .checkboxOutline {
+    color: var(--text-dark) !important;
+    background: var(--cottage-cream) !important;
+    border-color: var(--cottage-cream) !important;
+}
+
+.mdl-switch__input:checked
+    + .mdl-switch__label
+    + .mdl-switch__trackContainer
+    .mdl-switch__track {
+    background: rgba(213, 160, 68, 0.46) !important;
+}
+
+.mdl-switch__input:checked
+    + .mdl-switch__label
+    + .mdl-switch__trackContainer
+    .mdl-switch__thumb {
+    background: var(--gold) !important;
+}
+
+
+/* ==========================================================================
+   SCROLLBARS
+   ========================================================================== */
+
+::-webkit-scrollbar {
+    width: 11px;
+    height: 11px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--coffee-deep);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--coffee-soft);
+    border: 2px solid var(--coffee-deep);
+    border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--gold);
+}
+
+
+/* ==========================================================================
+   SELECTION AND FOCUS
+   ========================================================================== */
+
+::selection {
+    color: var(--text-dark);
+    background: var(--cottage-cream);
+}
+
+:focus-visible {
+    outline: 3px solid rgba(213, 160, 68, 0.88) !important;
+    outline-offset: 2px !important;
+}
+
+
+/* ==========================================================================
+   MOBILE
+   ========================================================================== */
+
+@media (max-width: 800px) {
+    .sectionTitleContainer {
+        margin-left: 1rem !important;
+        margin-right: 1rem !important;
+    }
+
+    body .sectionTitleTextButton,
+    body .sectionTitleTextButton.emby-button,
+    body button.sectionTitleTextButton {
+        min-height: 2rem !important;
+        padding: 0.3rem 0.8rem !important;
+        font-size: 0.95rem !important;
+    }
+
+    .itemsContainer,
+    .horizontalItemsContainer {
+        gap: 0.65rem !important;
+    }
+
+    .card {
+        padding: 0.15rem !important;
+    }
+}
+
+
+
+
+/* ==========================================================================
+   ELEGANTFIN-INSPIRED CINEMATIC DETAIL PAGE
+   Movie / series pages only. CottageFin colours retained.
+   ========================================================================== */
+
+#itemDetailPage {
+    --detail-side-padding: clamp(1.25rem, 4vw, 5rem);
+    --detail-content-width: 86rem;
+    --detail-poster-width: clamp(12rem, 17vw, 17rem);
+}
+
+#itemDetailPage .detailPageWrapperContainer {
+    position: relative !important;
+    z-index: 2 !important;
+    width: 100% !important;
+    max-width: none !important;
+    min-height: 48vh !important;
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+    background:
+        linear-gradient(
+            180deg,
+            rgba(63, 33, 15, 0) 0%,
+            rgba(63, 33, 15, 0.18) 28%,
+            rgba(63, 33, 15, 0.84) 72%,
+            var(--coffee-deep) 100%
+        ) !important;
+}
+
+#itemDetailPage .itemBackdrop {
+    display: block !important;
+    position: relative !important;
+    width: 100% !important;
+    height: clamp(30rem, 72vh, 52rem) !important;
+    margin: 0 !important;
+    background-position: center 18% !important;
+    background-size: cover !important;
+    opacity: 0.9 !important;
+    filter: saturate(0.92) contrast(1.03) brightness(0.82) !important;
+    -webkit-mask-image: linear-gradient(
+        to bottom,
+        #000 0%,
+        #000 42%,
+        rgba(0, 0, 0, 0.86) 61%,
+        rgba(0, 0, 0, 0.3) 82%,
+        transparent 100%
+    ) !important;
+    mask-image: linear-gradient(
+        to bottom,
+        #000 0%,
+        #000 42%,
+        rgba(0, 0, 0, 0.86) 61%,
+        rgba(0, 0, 0, 0.3) 82%,
+        transparent 100%
+    ) !important;
+}
+
+#itemDetailPage .detailPagePrimaryContainer {
+    display: flex !important;
+    align-items: flex-end !important;
+    justify-content: center !important;
+    width: 100% !important;
+    max-width: none !important;
+    margin: clamp(-18rem, -24vh, -12rem) auto 0 !important;
+    padding: 0 var(--detail-side-padding) 2rem !important;
+    background: transparent !important;
+    text-align: left !important;
+}
+
+#itemDetailPage .detailPagePrimaryContainer > .detailPagePrimaryContent,
+#itemDetailPage .detailPagePrimaryContent {
+    display: grid !important;
+    grid-template-columns: var(--detail-poster-width) minmax(0, 1fr) !important;
+    align-items: end !important;
+    column-gap: clamp(1.5rem, 3vw, 3.5rem) !important;
+    width: min(100%, var(--detail-content-width)) !important;
+    max-width: var(--detail-content-width) !important;
+    margin: 0 auto !important;
+    padding: 0 !important;
+}
+
+#itemDetailPage .detailImageContainer {
+    grid-column: 1 !important;
+    grid-row: 1 / span 6 !important;
+    align-self: end !important;
+    width: var(--detail-poster-width) !important;
+    min-width: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+#itemDetailPage .detailImageContainer .card {
+    display: block !important;
+    position: relative !important;
+    inset: auto !important;
+    float: none !important;
+    width: 100% !important;
+    max-width: none !important;
+    margin: 0 !important;
+    border-radius: var(--radius-large) !important;
+    box-shadow:
+        0 1.5rem 3.5rem rgba(20, 8, 2, 0.5),
+        0 0 0 1px rgba(255, 244, 216, 0.25) !important;
+    overflow: hidden !important;
+}
+
+#itemDetailPage .detailImageContainer .cardBox,
+#itemDetailPage .detailImageContainer .cardScalable,
+#itemDetailPage .detailImageContainer .cardImageContainer,
+#itemDetailPage .detailImageContainer .cardImage {
+    border-radius: var(--radius-large) !important;
+}
+
+#itemDetailPage .infoWrapper {
+    grid-column: 2 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    justify-content: flex-end !important;
+    min-width: 0 !important;
+    padding: 0 !important;
+    text-align: left !important;
+}
+
+#itemDetailPage .detailLogo {
+    position: static !important;
+    display: block !important;
+    width: min(34rem, 60vw) !important;
+    max-width: 100% !important;
+    height: clamp(6rem, 15vh, 11rem) !important;
+    margin: 0 0 1rem !important;
+    transform: none !important;
+    background-position: left bottom !important;
+    background-size: contain !important;
+}
+
+#itemDetailPage .detailLogo.hide {
+    display: none !important;
+}
+
+#itemDetailPage .nameContainer {
+    width: 100% !important;
+    margin: 0 !important;
+    text-align: left !important;
+}
+
+#itemDetailPage .nameContainer > h1.itemName,
+#itemDetailPage .nameContainer > h1.parentName {
+    max-width: 18ch !important;
+    margin: 0 0 0.35rem !important;
+    padding: 0 !important;
+    color: var(--cottage-cream-light) !important;
+    font-family: "DM Serif Display", Georgia, serif !important;
+    font-size: clamp(2.7rem, 5vw, 5.8rem) !important;
+    font-weight: 400 !important;
+    line-height: 0.96 !important;
+    letter-spacing: 0.005em !important;
+    text-shadow: 0 0.15rem 1.2rem rgba(20, 8, 2, 0.5) !important;
+}
+
+#itemDetailPage .detailLogo:not(.hide) ~ .detailPageWrapperContainer .nameContainer h1 {
+    display: none !important;
+}
+
+#itemDetailPage .detailLogo.hide ~ .detailPageWrapperContainer .nameContainer h1 {
+    display: block !important;
+}
+
+#itemDetailPage .itemMiscInfo,
+#itemDetailPage .itemMiscInfo-primary {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    align-items: center !important;
+    gap: 0.45rem 0.7rem !important;
+    margin: 0.45rem 0 0.9rem !important;
+    color: rgba(255, 244, 216, 0.84) !important;
+}
+
+#itemDetailPage .mediaInfoItem {
+    color: rgba(255, 244, 216, 0.86) !important;
+    font-weight: 600 !important;
+}
+
+#itemDetailPage .mediaInfoOfficialRating {
+    padding: 0.1rem 0.45rem !important;
+    border: 1px solid rgba(255, 244, 216, 0.45) !important;
+    border-radius: 0.35rem !important;
+    background: rgba(63, 33, 15, 0.38) !important;
+    color: var(--cottage-cream-light) !important;
+}
+
+#itemDetailPage .mainDetailButtons {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    gap: 0.55rem !important;
+    width: 100% !important;
+    margin: 0.2rem 0 1.2rem !important;
+    padding: 0 !important;
+}
+
+#itemDetailPage .detailButton {
+    margin: 0 !important;
+}
+
+#itemDetailPage .detailButton:not(.btnPlay) {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 2.85rem !important;
+    min-width: 2.85rem !important;
+    height: 2.85rem !important;
+    padding: 0 !important;
+    color: var(--cottage-cream-light) !important;
+    background: rgba(63, 33, 15, 0.64) !important;
+    border: 1px solid rgba(255, 244, 216, 0.34) !important;
+    border-radius: 999px !important;
+    backdrop-filter: blur(10px) !important;
+    box-shadow: 0 0.4rem 1rem rgba(20, 8, 2, 0.28) !important;
+}
+
+#itemDetailPage .detailButton:not(.btnPlay):hover {
+    color: var(--coffee-deep) !important;
+    background: var(--cottage-cream) !important;
+    border-color: var(--cottage-cream-light) !important;
+}
+
+#itemDetailPage .btnPlay.detailButton {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    flex-direction: row !important;
+    min-width: 9.5rem !important;
+    min-height: 3rem !important;
+    padding: 0.55rem 1.25rem !important;
+    color: var(--coffee-deep) !important;
+    background: var(--cottage-cream-light) !important;
+    border: 1px solid rgba(68, 39, 18, 0.2) !important;
+    border-radius: 999px !important;
+    font-weight: 800 !important;
+    box-shadow: 0 0.55rem 1.2rem rgba(20, 8, 2, 0.34) !important;
+}
+
+#itemDetailPage .btnPlay.detailButton:hover {
+    color: var(--cottage-cream-light) !important;
+    background: var(--coffee-soft) !important;
+}
+
+#itemDetailPage .btnPlay:not(.formDialogFooterItem):not(.play-button)::after {
+    content: attr(title) !important;
+    padding-left: 0.45rem !important;
+}
+
+#itemDetailPage .detailPageSecondaryContainer,
+#itemDetailPage .detailPageContent {
+    position: relative !important;
+    z-index: 3 !important;
+    width: min(calc(100% - (2 * var(--detail-side-padding))), var(--detail-content-width)) !important;
+    max-width: var(--detail-content-width) !important;
+    margin: 0 auto !important;
+    padding: 0 0 3rem !important;
+    background: transparent !important;
+}
+
+#itemDetailPage .detailSection {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1.7fr) minmax(17rem, 0.8fr) !important;
+    gap: 1.5rem 2rem !important;
+    width: 100% !important;
+    max-width: none !important;
+    margin: 0 !important;
+}
+
+#itemDetailPage .detailSectionContent {
+    grid-column: 1 !important;
+    align-content: start !important;
+    min-height: 0 !important;
+    padding: 1.4rem 1.5rem !important;
+    color: var(--text-light) !important;
+    background: rgba(63, 33, 15, 0.52) !important;
+    border: 1px solid rgba(255, 244, 216, 0.16) !important;
+    border-radius: var(--radius-large) !important;
+    box-shadow: 0 0.8rem 2rem rgba(20, 8, 2, 0.22) !important;
+    backdrop-filter: blur(10px) !important;
+}
+
+#itemDetailPage .tagline {
+    margin-bottom: 0.8rem !important;
+    color: var(--cottage-cream-dark) !important;
+    font-family: "DM Serif Display", Georgia, serif !important;
+    font-size: 1.2rem !important;
+    font-style: italic !important;
+}
+
+#itemDetailPage .overview,
+#itemDetailPage .itemOverview {
+    max-width: 70ch !important;
+    margin: 0 !important;
+    color: rgba(255, 244, 220, 0.9) !important;
+    font-size: 1.02rem !important;
+    line-height: 1.7 !important;
+}
+
+#itemDetailPage .itemDetailsGroup {
+    grid-column: 2 !important;
+    align-self: start !important;
+    margin: 0 !important;
+    overflow: hidden !important;
+    color: var(--text-dark) !important;
+    background: var(--cottage-cream-light) !important;
+    border: 1px solid rgba(68, 39, 18, 0.2) !important;
+    border-radius: var(--radius-large) !important;
+    box-shadow: 0 0.8rem 2rem rgba(20, 8, 2, 0.24) !important;
+}
+
+#itemDetailPage .detailsGroupItem {
+    display: flex !important;
+    align-items: baseline !important;
+    justify-content: space-between !important;
+    gap: 1rem !important;
+    margin: 0 !important;
+    padding: 0.72rem 1rem !important;
+    border-bottom: 1px solid rgba(68, 39, 18, 0.12) !important;
+}
+
+#itemDetailPage .detailsGroupItem:last-child {
+    border-bottom: 0 !important;
+}
+
+#itemDetailPage .detailsGroupItem > .label {
+    flex: 0 0 6rem !important;
+    color: var(--text-dark) !important;
+    font-weight: 800 !important;
+}
+
+#itemDetailPage .detailsGroupItem > .content,
+#itemDetailPage .detailsGroupItem > .content a {
+    color: var(--text-medium) !important;
+    text-align: right !important;
+}
+
+#itemDetailPage .trackSelections {
+    grid-column: 1 / -1 !important;
+    margin: 0 !important;
+    padding: 1rem !important;
+    color: var(--text-dark) !important;
+    background: var(--cottage-cream-light) !important;
+    border: 1px solid rgba(68, 39, 18, 0.2) !important;
+    border-radius: var(--radius-large) !important;
+}
+
+#itemDetailPage .verticalSection,
+#itemDetailPage .emby-scroller-container {
+    width: 100% !important;
+    max-width: none !important;
+}
+
+#itemDetailPage .verticalSection > .sectionTitleContainer,
+#itemDetailPage .verticalSection > h2.sectionTitle {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+}
+
+#itemDetailPage .emby-scroller,
+#itemDetailPage .scrollX {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    padding-left: 0 !important;
+}
+
+@media (max-width: 900px) {
+    #itemDetailPage {
+        --detail-side-padding: 1rem;
+        --detail-poster-width: min(46vw, 13rem);
+    }
+
+    #itemDetailPage .itemBackdrop {
+        position: sticky !important;
+        top: -10vh !important;
+        height: 48vh !important;
+        background-position: center top !important;
+    }
+
+    #itemDetailPage .detailPagePrimaryContainer {
+        margin-top: -9rem !important;
+        padding-bottom: 1.3rem !important;
+    }
+
+    #itemDetailPage .detailPagePrimaryContainer > .detailPagePrimaryContent,
+    #itemDetailPage .detailPagePrimaryContent {
+        grid-template-columns: 1fr !important;
+        justify-items: center !important;
+        row-gap: 1.1rem !important;
+    }
+
+    #itemDetailPage .detailImageContainer {
+        grid-column: 1 !important;
+        grid-row: auto !important;
+        width: var(--detail-poster-width) !important;
+    }
+
+    #itemDetailPage .infoWrapper {
+        grid-column: 1 !important;
+        align-items: center !important;
+        width: 100% !important;
+        text-align: center !important;
+    }
+
+    #itemDetailPage .detailLogo {
+        width: min(90vw, 28rem) !important;
+        height: 7rem !important;
+        margin: 0 auto 0.75rem !important;
+        background-position: center bottom !important;
+    }
+
+    #itemDetailPage .nameContainer,
+    #itemDetailPage .nameContainer > h1.itemName,
+    #itemDetailPage .nameContainer > h1.parentName {
+        max-width: 100% !important;
+        text-align: center !important;
+    }
+
+    #itemDetailPage .nameContainer > h1.itemName,
+    #itemDetailPage .nameContainer > h1.parentName {
+        font-size: clamp(2.2rem, 10vw, 3.5rem) !important;
+        line-height: 1 !important;
+    }
+
+    #itemDetailPage .itemMiscInfo,
+    #itemDetailPage .itemMiscInfo-primary,
+    #itemDetailPage .mainDetailButtons {
+        justify-content: center !important;
+    }
+
+    #itemDetailPage .detailPageSecondaryContainer,
+    #itemDetailPage .detailPageContent {
+        width: calc(100% - 2rem) !important;
+    }
+
+    #itemDetailPage .detailSection {
+        grid-template-columns: 1fr !important;
+    }
+
+    #itemDetailPage .detailSectionContent,
+    #itemDetailPage .itemDetailsGroup,
+    #itemDetailPage .trackSelections {
+        grid-column: 1 !important;
+    }
+
+    #itemDetailPage .detailSectionContent {
+        padding: 1.15rem !important;
+    }
+
+    #itemDetailPage .detailsGroupItem > .label {
+        flex-basis: 5.5rem !important;
+    }
+}
+
+
+/* ==========================================================================
+   REDUCED MOTION
+   ========================================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
