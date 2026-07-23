@@ -1,8 +1,8 @@
 /* ==========================================================================
-   COTTAGEFIN v2.7
+   COTTAGEFIN v3.0
    Cream header, coffee background, cream cards
    Small coffee-coloured section pills
-   Solid coffee background; card play buttons only in Continue Watching
+   Flat, shadow-free finish; corrected section-pill text alignment
    ========================================================================== */
 
 
@@ -140,7 +140,6 @@ body .fieldDescription {
     color: var(--text-dark) !important;
     background: var(--cottage-cream) !important;
     border-bottom: 1px solid rgba(69, 37, 16, 0.2) !important;
-    box-shadow: 0 5px 18px rgba(25, 10, 2, 0.32) !important;
     backdrop-filter: none !important;
 }
 
@@ -179,7 +178,6 @@ body .fieldDescription {
     color: var(--text-dark) !important;
     background: transparent !important;
     border: 0 !important;
-    box-shadow: none !important;
 }
 
 .skinHeader .emby-button:hover,
@@ -201,7 +199,6 @@ body .fieldDescription {
     color: var(--text-dark) !important;
     background: var(--cottage-cream-light) !important;
     border-right: 1px solid rgba(68, 39, 18, 0.18) !important;
-    box-shadow: 8px 0 28px rgba(25, 10, 2, 0.28) !important;
 }
 
 .navMenuOption {
@@ -218,7 +215,7 @@ body .fieldDescription {
 .navMenuOption-selected {
     color: var(--text-dark) !important;
     background: rgba(104, 64, 32, 0.18) !important;
-    box-shadow: inset 4px 0 0 var(--caramel) !important;
+    border-left: 4px solid var(--caramel) !important;
 }
 
 .navMenuOption .material-icons,
@@ -254,7 +251,6 @@ body .fieldDescription {
     color: var(--text-light) !important;
     background: transparent !important;
     border: 0 !important;
-    box-shadow: none !important;
 }
 
 
@@ -286,9 +282,6 @@ body button.sectionTitleTextButton {
     border: 1px solid rgba(255, 244, 216, 0.52) !important;
     border-radius: 11px !important;
 
-    box-shadow:
-        0 4px 10px rgba(20, 8, 2, 0.28),
-        inset 0 1px 0 rgba(255, 255, 255, 0.12) !important;
 
     font-family: "Nunito", sans-serif !important;
     font-size: 1.05rem !important;
@@ -306,8 +299,7 @@ body button.sectionTitleTextButton {
         color 160ms ease,
         background-color 160ms ease,
         border-color 160ms ease,
-        transform 160ms ease,
-        box-shadow 160ms ease !important;
+        transform 160ms ease !important;
 }
 
 body .sectionTitleTextButton:hover,
@@ -317,19 +309,25 @@ body button.sectionTitleTextButton:hover {
     background: var(--coffee-main) !important;
     border-color: var(--cottage-cream) !important;
 
-    box-shadow:
-        0 6px 14px rgba(20, 8, 2, 0.36),
-        inset 0 1px 0 rgba(255, 255, 255, 0.15) !important;
 
     transform: translateY(-1px) !important;
 }
 
-/* Raise text only, leaving the arrow centred */
-.sectionTitleTextButton .button-text,
-.sectionTitleTextButton .buttonText,
-.sectionTitleTextButton span:not(.material-icons):not(.material-icons-round) {
+/* Raise only the title text; keep the chevron vertically centred */
+body .sectionTitleTextButton .sectionTitle,
+body .sectionTitleTextButton .sectionTitle-cards,
+body .sectionTitleTextButton .button-text,
+body .sectionTitleTextButton .buttonText,
+body .sectionTitleTextButton span:not(.material-icons):not(.material-icons-round) {
     position: relative !important;
-    top: -1px !important;
+    top: -3px !important;
+}
+
+/* Prevent the icon from inheriting any vertical nudge */
+body .sectionTitleTextButton .material-icons,
+body .sectionTitleTextButton .material-icons-round {
+    top: 0 !important;
+    transform: none !important;
 }
 
 body .sectionTitleTextButton .material-icons,
@@ -383,7 +381,6 @@ body .sectionTitleTextButton .material-icons-round {
     border: 1px solid rgba(255, 244, 216, 0.42) !important;
     border-radius: 999px !important;
 
-    box-shadow: 0 3px 8px rgba(20, 8, 2, 0.24) !important;
 }
 
 .listPagingButton:hover {
@@ -419,15 +416,11 @@ body .sectionTitleTextButton .material-icons-round {
     border: 1px solid rgba(67, 35, 14, 0.2) !important;
     border-radius: var(--radius-medium) !important;
 
-    box-shadow:
-        0 8px 18px rgba(20, 8, 2, 0.3),
-        inset 0 1px 0 rgba(255, 255, 255, 0.65) !important;
 
     overflow: hidden !important;
 
     transition:
         transform 180ms ease,
-        box-shadow 180ms ease,
         border-color 180ms ease !important;
 }
 
@@ -435,10 +428,6 @@ body .sectionTitleTextButton .material-icons-round {
     transform: translateY(-4px) !important;
     border-color: rgba(213, 160, 68, 0.8) !important;
 
-    box-shadow:
-        0 13px 27px rgba(20, 8, 2, 0.4),
-        0 0 0 1px rgba(213, 160, 68, 0.22),
-        inset 0 1px 0 rgba(255, 255, 255, 0.75) !important;
 }
 
 .cardScalable,
@@ -589,13 +578,11 @@ body .sectionTitleTextButton .material-icons-round {
     border: 1px solid rgba(68, 39, 18, 0.22) !important;
     border-radius: var(--radius-medium) !important;
 
-    box-shadow: 0 4px 10px rgba(20, 8, 2, 0.22) !important;
 
     transition:
         color 160ms ease,
         background-color 160ms ease,
-        transform 160ms ease,
-        box-shadow 160ms ease !important;
+        transform 160ms ease !important;
 }
 
 .emby-button:hover,
@@ -607,7 +594,6 @@ body .sectionTitleTextButton .material-icons-round {
 
     transform: translateY(-1px);
 
-    box-shadow: 0 6px 14px rgba(20, 8, 2, 0.28) !important;
 }
 
 .skinHeader .emby-button,
@@ -615,7 +601,6 @@ body .sectionTitleTextButton .material-icons-round {
     color: var(--text-dark) !important;
     background: transparent !important;
     border: 0 !important;
-    box-shadow: none !important;
 }
 
 .skinHeader .emby-button:hover,
@@ -638,14 +623,14 @@ body .sectionTitleTextButton .material-icons-round {
     border: 1px solid rgba(68, 39, 18, 0.3) !important;
     border-radius: var(--radius-small) !important;
 
-    box-shadow: inset 0 1px 2px rgba(40, 17, 5, 0.1) !important;
 }
 
 .emby-input:focus,
 .emby-select:focus,
 .emby-textarea:focus {
     border-color: var(--caramel) !important;
-    box-shadow: 0 0 0 3px rgba(183, 125, 45, 0.2) !important;
+    outline: 2px solid rgba(183, 125, 45, 0.55) !important;
+    outline-offset: 1px !important;
 }
 
 .inputLabel,
@@ -671,7 +656,6 @@ body .sectionTitleTextButton .material-icons-round {
     border: 1px solid rgba(68, 39, 18, 0.24) !important;
     border-radius: var(--radius-medium) !important;
 
-    box-shadow: 0 18px 44px rgba(20, 8, 2, 0.42) !important;
 }
 
 .dialogHeader,
@@ -748,7 +732,6 @@ body .sectionTitleTextButton .material-icons-round {
 .itemDetailImage,
 .detailImageContainer .cardBox {
     border-radius: var(--radius-large) !important;
-    box-shadow: 0 14px 34px rgba(20, 8, 2, 0.4) !important;
 }
 
 .detailButton {
@@ -972,9 +955,6 @@ body .sectionTitleTextButton .material-icons-round {
     max-width: none !important;
     margin: 0 !important;
     border-radius: var(--radius-large) !important;
-    box-shadow:
-        0 1.5rem 3.5rem rgba(20, 8, 2, 0.5),
-        0 0 0 1px rgba(255, 244, 216, 0.25) !important;
     overflow: hidden !important;
 }
 
@@ -1091,7 +1071,6 @@ body .sectionTitleTextButton .material-icons-round {
     border: 1px solid rgba(255, 244, 216, 0.34) !important;
     border-radius: 999px !important;
     backdrop-filter: blur(10px) !important;
-    box-shadow: 0 0.4rem 1rem rgba(20, 8, 2, 0.28) !important;
 }
 
 #itemDetailPage .detailButton:not(.btnPlay):hover {
@@ -1113,7 +1092,6 @@ body .sectionTitleTextButton .material-icons-round {
     border: 1px solid rgba(68, 39, 18, 0.2) !important;
     border-radius: 999px !important;
     font-weight: 800 !important;
-    box-shadow: 0 0.55rem 1.2rem rgba(20, 8, 2, 0.34) !important;
 }
 
 #itemDetailPage .btnPlay.detailButton:hover {
@@ -1155,7 +1133,6 @@ body .sectionTitleTextButton .material-icons-round {
     background: rgba(63, 33, 15, 0.52) !important;
     border: 1px solid rgba(255, 244, 216, 0.16) !important;
     border-radius: var(--radius-large) !important;
-    box-shadow: 0 0.8rem 2rem rgba(20, 8, 2, 0.22) !important;
     backdrop-filter: blur(10px) !important;
 }
 
@@ -1185,7 +1162,6 @@ body .sectionTitleTextButton .material-icons-round {
     background: var(--cottage-cream-light) !important;
     border: 1px solid rgba(68, 39, 18, 0.2) !important;
     border-radius: var(--radius-large) !important;
-    box-shadow: 0 0.8rem 2rem rgba(20, 8, 2, 0.24) !important;
 }
 
 #itemDetailPage .detailsGroupItem {
@@ -1346,3 +1322,16 @@ body .sectionTitleTextButton .material-icons-round {
         transition-duration: 0.01ms !important;
     }
 }
+
+/* ==========================================================================
+   FLAT FINISH
+   Prevent Jellyfin defaults and component states from restoring shadows.
+   ========================================================================== */
+
+*,
+*::before,
+*::after {
+    box-shadow: none !important;
+    text-shadow: none !important;
+}
+
