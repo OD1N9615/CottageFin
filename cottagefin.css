@@ -1,8 +1,8 @@
 /* ==========================================================================
-   COTTAGEFIN v3.0
+   COTTAGEFIN v3.1
    Cream header, coffee background, cream cards
    Small coffee-coloured section pills
-   Flat, shadow-free finish; corrected section-pill text alignment
+   Cosier typography; raised pill labels; all card play buttons removed
    ========================================================================== */
 
 
@@ -10,7 +10,7 @@
    FONTS
    ========================================================================== */
 
-@import url("https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Nunito:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Berkshire+Swash&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap");
 
 
 /* ==========================================================================
@@ -48,7 +48,7 @@ html,
 body {
     background: var(--coffee-dark) !important;
     color: var(--text-light) !important;
-    font-family: "Nunito", sans-serif !important;
+    font-family: "Lora", Georgia, serif !important;
 }
 
 body,
@@ -56,7 +56,7 @@ button,
 input,
 select,
 textarea {
-    font-family: "Nunito", sans-serif !important;
+    font-family: "Lora", Georgia, serif !important;
 }
 
 .backgroundContainer {
@@ -86,7 +86,7 @@ textarea {
 .detailPageContent h2,
 .formDialogHeaderTitle {
     color: var(--text-light) !important;
-    font-family: "DM Serif Display", Georgia, serif !important;
+    font-family: "Chocho Aura Demo", "Chocho Aura", "Berkshire Swash", Georgia, serif !important;
     font-weight: 400 !important;
     letter-spacing: 0.015em !important;
 }
@@ -283,7 +283,7 @@ body button.sectionTitleTextButton {
     border-radius: 11px !important;
 
 
-    font-family: "Nunito", sans-serif !important;
+    font-family: "Lora", Georgia, serif !important;
     font-size: 1.05rem !important;
     font-weight: 600 !important;
     line-height: 1.2 !important;
@@ -320,7 +320,7 @@ body .sectionTitleTextButton .button-text,
 body .sectionTitleTextButton .buttonText,
 body .sectionTitleTextButton span:not(.material-icons):not(.material-icons-round) {
     position: relative !important;
-    top: -3px !important;
+    top: -4.5px !important;
 }
 
 /* Prevent the icon from inheriting any vertical nudge */
@@ -498,54 +498,19 @@ body .sectionTitleTextButton .material-icons-round {
 
 /* ==========================================================================
    CARD PLAY BUTTON VISIBILITY
-   Hide card play controls everywhere except Continue Watching.
-   Several selectors are included to cover Jellyfin web-client variants.
+   Remove play controls from every media card, including Continue Watching.
+   Menus and non-play card actions remain available.
    ========================================================================== */
 
-/* Hide only play controls, leaving menus and other card actions available. */
 .card .cardOverlayFab-primary,
 .card .playButton,
 .card .playButtonContainer,
 .card button[data-action="play"],
 .card button[is="emby-button"][title="Play"],
-.card button[aria-label="Play"] {
+.card button[aria-label="Play"],
+.card button[title="Play"],
+.cardOverlayContainer .cardOverlayFab-primary {
     display: none !important;
-}
-
-/* Restore play controls inside Jellyfin's common Continue Watching containers. */
-.resumeItems .cardOverlayFab-primary,
-.resumeItems .playButton,
-.resumeItems .playButtonContainer,
-.resumeItems button[data-action="play"],
-.resumeItems button[is="emby-button"][title="Play"],
-.resumeItems button[aria-label="Play"],
-.continueWatching .cardOverlayFab-primary,
-.continueWatching .playButton,
-.continueWatching .playButtonContainer,
-.continueWatching button[data-action="play"],
-.continueWatching button[is="emby-button"][title="Play"],
-.continueWatching button[aria-label="Play"],
-.continueWatchingItems .cardOverlayFab-primary,
-.continueWatchingItems .playButton,
-.continueWatchingItems .playButtonContainer,
-.continueWatchingItems button[data-action="play"],
-.continueWatchingItems button[is="emby-button"][title="Play"],
-.continueWatchingItems button[aria-label="Play"] {
-    display: inline-flex !important;
-}
-
-/*
-   Modern-browser fallback: Continue Watching cards carry a playback progress
-   bar. This keeps their play control visible even when Jellyfin changes the
-   surrounding section class.
-*/
-.card:has(.itemProgressBar) .cardOverlayFab-primary,
-.card:has(.itemProgressBar) .playButton,
-.card:has(.itemProgressBar) .playButtonContainer,
-.card:has(.itemProgressBar) button[data-action="play"],
-.card:has(.itemProgressBar) button[is="emby-button"][title="Play"],
-.card:has(.itemProgressBar) button[aria-label="Play"] {
-    display: inline-flex !important;
 }
 
 
@@ -1004,7 +969,7 @@ body .sectionTitleTextButton .material-icons-round {
     margin: 0 0 0.35rem !important;
     padding: 0 !important;
     color: var(--cottage-cream-light) !important;
-    font-family: "DM Serif Display", Georgia, serif !important;
+    font-family: "Chocho Aura Demo", "Chocho Aura", "Berkshire Swash", Georgia, serif !important;
     font-size: clamp(2.7rem, 5vw, 5.8rem) !important;
     font-weight: 400 !important;
     line-height: 0.96 !important;
@@ -1139,7 +1104,7 @@ body .sectionTitleTextButton .material-icons-round {
 #itemDetailPage .tagline {
     margin-bottom: 0.8rem !important;
     color: var(--cottage-cream-dark) !important;
-    font-family: "DM Serif Display", Georgia, serif !important;
+    font-family: "Chocho Aura Demo", "Chocho Aura", "Berkshire Swash", Georgia, serif !important;
     font-size: 1.2rem !important;
     font-style: italic !important;
 }
@@ -1321,6 +1286,41 @@ body .sectionTitleTextButton .material-icons-round {
         animation-iteration-count: 1 !important;
         transition-duration: 0.01ms !important;
     }
+}
+
+
+
+/* ==========================================================================
+   READABLE UI TEXT
+   Keep dense utility text legible while headings retain the cosy display face.
+   ========================================================================== */
+
+.emby-input,
+.emby-select,
+.emby-textarea,
+.listItem,
+.cardText,
+.cardText-first,
+.cardText-secondary,
+.secondaryText,
+.fieldDescription,
+.itemOverview,
+.overview,
+.mediaInfoItem,
+.metadata {
+    font-family: "Lora", Georgia, serif !important;
+}
+
+.sectionTitleTextButton,
+.sectionTitleTextButton *,
+.pageTitle,
+.sectionTitle,
+.itemName-primary,
+.detailPagePrimaryContainer h1,
+.detailPagePrimaryContainer h2,
+.detailPageContent h1,
+.detailPageContent h2 {
+    font-family: "Chocho Aura Demo", "Chocho Aura", "Berkshire Swash", Georgia, serif !important;
 }
 
 /* ==========================================================================
