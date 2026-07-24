@@ -299,3 +299,28 @@
     font-size: .6em;
     opacity: .55;
 }
+/* Restore CottageFin brown background over ElegantFin */
+.backgroundContainer,
+.nowPlayingPlaylist,
+.nowPlayingContextMenu,
+html {
+    background: linear-gradient(
+        0deg,
+        #2A1B12,
+        #603A29
+    ) !important;
+}
+
+/* Keep the detail-page cinematic fade brown */
+.detailPageWrapperContainer {
+    background: linear-gradient(
+        0deg,
+        #2A1B12 85%,
+        transparent
+    ) !important;
+}
+
+/* Prevent ElegantFin's fallback blue from showing through */
+.noBackdropTransparency .detailPageSecondaryContainer {
+    background-color: transparent !important;
+}
