@@ -1,0 +1,301 @@
+/*
+ * CottageFin Antique Paper Edition
+ * ElegantFin/CottageFin visual override
+ *
+ * Palette:
+ * Deep Cinnamon  #603A29
+ * Antique Paper  #E2D0B2
+ * Espresso       #2A1B12
+ * Warm Gold      #B88953
+ */
+
+@import url("https://od1n9615.github.io/CottageFin/cottagefin.css");
+
+:root,
+* {
+    --cottageDeepCinnamon: #603A29;
+    --cottageDeepCinnamonHover: #6E4431;
+    --cottageAntiquePaper: #E2D0B2;
+    --cottageAntiquePaperSoft: #D9C3A0;
+    --cottageAntiquePaperLight: #F1E4CC;
+    --cottageEspresso: #2A1B12;
+    --cottageGold: #B88953;
+
+    --headerColor: rgba(226, 208, 178, 0.97);
+    --drawerColor: rgba(226, 208, 178, 0.98);
+    --borderColor: rgba(226, 208, 178, 0.92);
+    --lighterBorderColor: rgba(241, 228, 204, 0.75);
+    --selectorBackgroundColor: var(--cottageDeepCinnamon);
+    --btnSubmitColor: var(--cottageGold);
+    --btnSubmitBorderColor: #D1AA75;
+    --checkboxCheckedBgColor: var(--cottageGold);
+}
+
+/* Cream navigation surfaces */
+.skinHeader:not(.osdHeader),
+.skinHeader-blurred:not(.osdHeader),
+.mainDrawer,
+.drawer-open,
+.MuiAppBar-root,
+.MuiDrawer-paper {
+    background: var(--headerColor) !important;
+    border-color: var(--borderColor) !important;
+}
+
+/* Espresso text and icons on cream surfaces */
+.skinHeader:not(.osdHeader),
+.skinHeader:not(.osdHeader) *,
+.mainDrawer,
+.mainDrawer *,
+.drawer-open,
+.drawer-open *,
+.MuiAppBar-root,
+.MuiAppBar-root *,
+.MuiDrawer-paper,
+.MuiDrawer-paper * {
+    color: var(--cottageEspresso) !important;
+}
+
+.navMenuOption-selected {
+    background: rgba(96, 58, 41, 0.18) !important;
+    border-color: rgba(96, 58, 41, 0.35) !important;
+}
+
+.listItem:hover,
+.navMenuOption:hover {
+    background: rgba(96, 58, 41, 0.11) !important;
+}
+
+/* Unified card tile */
+.cardBox {
+    position: relative;
+    background: var(--cottageDeepCinnamon) !important;
+    border: 1px solid var(--cottageAntiquePaper) !important;
+    border-radius: 1em !important;
+    overflow: hidden !important;
+    padding-bottom: 0 !important;
+}
+
+/* Keep the poster itself rounded on all four corners */
+.cardScalable {
+    position: relative;
+    z-index: 1;
+    border: 0 !important;
+    border-radius: 1em !important;
+    overflow: hidden !important;
+    box-shadow: none !important;
+}
+
+.cardImageContainer,
+.cardOverlayContainer,
+.cardBox:not(.visualCardBox) .cardPadder {
+    border-radius: 1em !important;
+}
+
+/*
+ * Text block sits beneath the artwork instead of overlapping it.
+ * Smaller padding keeps the footer compact.
+ */
+.cardText,
+.cardText-first,
+.cardText-secondary {
+    position: relative !important;
+    z-index: 2;
+    color: var(--cottageAntiquePaperLight) !important;
+    background: var(--cottageDeepCinnamon) !important;
+    text-shadow: none !important;
+    box-sizing: border-box !important;
+}
+
+.cardText {
+    margin: 0 !important;
+    padding-left: 0.8em !important;
+    padding-right: 0.8em !important;
+}
+
+.cardText-first {
+    padding-top: 0.55em !important;
+    padding-bottom: 0.08em !important;
+    font-weight: 600 !important;
+    line-height: 1.2 !important;
+}
+
+.cardText-secondary {
+    padding-top: 0 !important;
+    padding-bottom: 0.55em !important;
+    opacity: 0.8;
+    line-height: 1.15 !important;
+}
+/* Some Jellyfin views use this footer instead of cardText */
+.innerCardFooter {
+    position: relative !important;
+    z-index: 2;
+    color: var(--cottageAntiquePaperLight) !important;
+    background: var(--cottageDeepCinnamon) !important;
+    text-shadow: none !important;
+    padding: 0.5em 0.8em !important;
+    box-sizing: border-box !important;
+}
+
+/* Prevent any old footer rule from sitting over the artwork */
+.cardScalable + .cardText,
+.cardScalable + .cardText-first,
+.cardScalable + .cardText-secondary,
+.cardScalable + .innerCardFooter {
+    margin-top: 0 !important;
+    transform: none !important;
+}
+
+/* Hover */
+.card:hover .cardBox {
+    background: var(--cottageDeepCinnamonHover) !important;
+}
+
+.card:hover .cardScalable {
+    box-shadow: none !important;
+}
+
+/*
+ * Clear keyboard / remote selection state.
+ * Uses a gold outline and soft halo without changing card geometry.
+ */
+.card:focus-within .cardBox,
+.card.selected .cardBox,
+.card.is-selected .cardBox,
+.cardBox:focus-within,
+.cardBox.selected,
+.cardBox.is-selected {
+    outline: 3px solid var(--cottageGold) !important;
+    outline-offset: 3px !important;
+    box-shadow:
+        0 0 0 2px rgba(42, 27, 18, 0.95),
+        0 0 0 6px rgba(184, 137, 83, 0.30) !important;
+}
+
+/* Jellyfin TV/web focus often lands on the card itself */
+.card:focus,
+.card.focused,
+.card[data-focusvisible-added],
+.card[data-focus-visible-added] {
+    outline: none !important;
+}
+
+.card:focus .cardBox,
+.card.focused .cardBox,
+.card[data-focusvisible-added] .cardBox,
+.card[data-focus-visible-added] .cardBox {
+    outline: 3px solid var(--cottageGold) !important;
+    outline-offset: 3px !important;
+    box-shadow:
+        0 0 0 2px rgba(42, 27, 18, 0.95),
+        0 0 0 6px rgba(184, 137, 83, 0.30) !important;
+}
+
+/* Keep overlay visible enough to reinforce selection */
+.card:focus .cardOverlayContainer,
+.card.focused .cardOverlayContainer,
+.card:focus-within .cardOverlayContainer {
+    border: 2px solid var(--cottageGold) !important;
+    background: rgba(184, 137, 83, 0.10) !important;
+}
+
+/* Cream borders elsewhere */
+.visualCardBox,
+.paperList,
+.itemDetailsGroup,
+.dialog,
+.emby-select-withcolor,
+.emby-select,
+.emby-input,
+.emby-textarea,
+.detailButton,
+.btnPlay,
+.searchfields-icon,
+.mediaInfoOfficialRating,
+.sliderBubble,
+.emby-button.block,
+#btnDeleteImage,
+.dashboardActionsContainer > .emby-button {
+    border-color: var(--cottageAntiquePaper) !important;
+}
+
+/* Warm progress and status accents */
+.itemProgressBarForeground {
+    background-color: var(--cottageGold) !important;
+}
+
+.countIndicator,
+.fullSyncIndicator,
+.mediaSourceIndicator {
+    background: var(--cottageGold) !important;
+}
+/* Cream text on dark pages */
+.backgroundContainer,
+.detailPageWrapperContainer,
+.detailPageSecondaryContainer,
+.detailSection,
+.detailSectionContent {
+    color: var(--cottageAntiquePaperLight);
+}
+
+/* --- Additional polish --- */
+
+/* Buttons */
+.button-submit {
+    background: var(--cottageGold) !important;
+    border-color: #D1AA75 !important;
+    color: var(--cottageEspresso) !important;
+}
+
+/* Play button */
+.btnPlay {
+    background: rgba(226, 208, 178, 0.08) !important;
+    color: var(--cottageAntiquePaperLight) !important;
+}
+
+/* Inputs */
+.emby-select-withcolor,
+.emby-select,
+.emby-input,
+.emby-textarea {
+    background: rgba(96, 58, 41, 0.65) !important;
+    color: var(--cottageAntiquePaperLight) !important;
+}
+
+/* Dialogs */
+.dialog {
+    background: rgba(58, 36, 25, 0.96) !important;
+}
+
+/* Detail groups */
+.itemDetailsGroup {
+    background: rgba(96, 58, 41, 0.35) !important;
+}
+
+/* Card hover */
+.card:hover .cardOverlayContainer {
+    background: rgba(226, 208, 178, 0.05) !important;
+}
+
+/* Selected navigation */
+.navMenuOption-selected .navMenuOptionText,
+.navMenuOption-selected .material-icons {
+    color: var(--cottageEspresso) !important;
+}
+
+/* Progress bar background */
+.itemProgressBar {
+    background: rgba(226, 208, 178, 0.18) !important;
+}
+
+/* Watched indicator */
+.playedIndicator {
+    background: #8EAF73 !important;
+}
+
+/* Footer version */
+.dashboardFooter::after {
+    content: "CottageFin Antique Paper";
+    font-size: .6em;
+    opacity: .55;
+}
