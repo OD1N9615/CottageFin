@@ -1,0 +1,175 @@
+/*
+ * CottageFin Cream Edition
+ * Visual override for the ElegantFin-based CottageFin theme.
+ *
+ * Keep this file separate from cottagefin.css to avoid recursive imports.
+ */
+
+@import url("https://od1n9615.github.io/CottageFin/cottagefin.css");
+
+:root,
+* {
+    --cottageCream: rgb(246, 235, 213);
+    --cottageCreamSoft: rgb(238, 222, 194);
+    --cottageCreamBright: rgb(255, 247, 231);
+    --cottageEspresso: rgb(31, 21, 14);
+    --cottageEspressoSoft: rgb(58, 41, 31);
+
+    --headerColor: rgba(246, 235, 213, 0.96);
+    --drawerColor: rgba(246, 235, 213, 0.97);
+    --borderColor: rgba(246, 235, 213, 0.92);
+    --lighterBorderColor: rgba(255, 247, 231, 0.78);
+}
+
+/* Cream header and navigation drawer */
+.skinHeader:not(.osdHeader),
+.skinHeader-blurred:not(.osdHeader),
+.mainDrawer,
+.drawer-open,
+.MuiAppBar-root,
+.MuiDrawer-paper {
+    background: var(--headerColor) !important;
+    border-color: var(--borderColor) !important;
+}
+
+/* Espresso text and icons inside cream navigation surfaces */
+.skinHeader:not(.osdHeader),
+.skinHeader:not(.osdHeader) *,
+.mainDrawer,
+.mainDrawer *,
+.drawer-open,
+.drawer-open *,
+.MuiAppBar-root,
+.MuiAppBar-root *,
+.MuiDrawer-paper,
+.MuiDrawer-paper * {
+    color: var(--cottageEspresso) !important;
+}
+
+/* Keep selected navigation items readable */
+.navMenuOption-selected {
+    background: rgba(58, 41, 31, 0.16) !important;
+    border-color: rgba(58, 41, 31, 0.30) !important;
+}
+
+.listItem:hover,
+.navMenuOption:hover {
+    background: rgba(58, 41, 31, 0.10) !important;
+}
+
+/* Cream borders throughout the interface */
+.cardScalable,
+.cardBox,
+.visualCardBox,
+.paperList,
+.itemDetailsGroup,
+.dialog,
+.emby-select-withcolor,
+.emby-select,
+.emby-input,
+.emby-textarea,
+.detailButton,
+.btnPlay,
+.searchfields-icon,
+.mediaInfoOfficialRating,
+.sliderBubble,
+.emby-button.block,
+#btnDeleteImage,
+.dashboardActionsContainer > .emby-button {
+    border-color: var(--borderColor) !important;
+}
+
+/*
+ * Unified media tiles:
+ * the cream panel now continues beneath the artwork and contains the title text.
+ */
+.cardBox {
+    background: var(--cottageCream) !important;
+    border: 1px solid var(--borderColor) !important;
+    border-radius: 1em !important;
+    overflow: hidden !important;
+    padding-bottom: 0 !important;
+}
+
+/* Join the artwork cleanly to the title plaque */
+.cardScalable {
+    border: 0 !important;
+    border-radius: 1em 1em 0 0 !important;
+    overflow: hidden !important;
+    box-shadow: none !important;
+}
+
+.cardImageContainer,
+.cardOverlayContainer,
+.cardBox:not(.visualCardBox) .cardPadder {
+    border-radius: 1em 1em 0 0 !important;
+}
+
+/* Title and subtitle area */
+.cardText,
+.cardText-first,
+.cardText-secondary {
+    color: var(--cottageEspresso) !important;
+    background: var(--cottageCream) !important;
+    text-shadow: none !important;
+}
+
+.cardText {
+    margin: 0 !important;
+    padding-left: 0.9em !important;
+    padding-right: 0.9em !important;
+}
+
+.cardText-first {
+    padding-top: 0.8em !important;
+    padding-bottom: 0.2em !important;
+    font-weight: 600 !important;
+}
+
+.cardText-secondary {
+    padding-top: 0.1em !important;
+    padding-bottom: 0.85em !important;
+    opacity: 0.76;
+}
+
+/* Some Jellyfin views use an inner footer for tile text */
+.innerCardFooter {
+    color: var(--cottageEspresso) !important;
+    background: var(--cottageCream) !important;
+    text-shadow: none !important;
+    padding: 0.8em 0.9em !important;
+}
+
+/* Prevent hover styling from breaking the single-panel tile shape */
+.card:hover .cardScalable {
+    box-shadow: none !important;
+}
+
+.card:hover .cardBox {
+    background: var(--cottageCreamBright) !important;
+}
+
+/* Cream selection outline with espresso contrast */
+.cardOverlayContainer {
+    border-color: var(--cottageCreamBright) !important;
+}
+
+.emby-checkbox:checked + span + .checkboxOutline {
+    border-color: var(--cottageCreamBright) !important;
+}
+
+/* Espresso text on other cream-backed controls */
+.collapseContent,
+.formDialogFooter:not(.formDialogFooter-clear),
+.formDialogHeader:not(.formDialogHeader-clear) {
+    color: var(--cottageEspresso) !important;
+}
+
+/* Preserve light text on dark page backgrounds outside cream surfaces */
+.backgroundContainer,
+.detailPageWrapperContainer,
+.detailPageSecondaryContainer,
+.detailSection,
+.detailSectionContent {
+    color: var(--cottageCreamBright);
+}
