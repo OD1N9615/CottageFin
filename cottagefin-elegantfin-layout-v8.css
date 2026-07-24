@@ -1,0 +1,375 @@
+/*
+ * CottageFin
+ * ElegantFin layout + CottageFin palette
+ *
+ * This file imports ElegantFin exactly once, then changes colours only.
+ * No CottageFin file imports another CottageFin file.
+ */
+
+@import url("https://cdn.jsdelivr.net/gh/lscambo13/ElegantFin@main/Theme/ElegantFin-jellyfin-theme-build-latest-minified.css");
+
+:root {
+    --darkerGradientPoint: #2A1B12;
+    --lighterGradientPoint: #603A29;
+    --borderColor: rgba(226, 208, 178, 0.88);
+    --headerColor: rgba(226, 208, 178, 0.96);
+    --drawerColor: rgba(226, 208, 178, 0.97);
+    --lighterBorderColor: rgba(241, 228, 204, 0.58);
+    --selectorBackgroundColor: #603A29;
+    --btnSubmitColor: #B88953;
+    --btnSubmitBorderColor: #D1AA75;
+    --checkboxCheckedBgColor: #B88953;
+    --hoverGradient: linear-gradient(
+        130deg,
+        rgba(226, 208, 178, 0.20) 20%,
+        rgba(226, 208, 178, 0.08) 42%
+    );
+
+    --cottage-espresso: #2A1B12;
+    --cottage-cinnamon: #603A29;
+    --cottage-paper: #E2D0B2;
+    --cottage-paper-light: #F1E4CC;
+    --cottage-gold: #B88953;
+}
+
+/* Main brown atmosphere */
+html,
+body,
+.backgroundContainer,
+.nowPlayingPlaylist,
+.nowPlayingContextMenu {
+    background: linear-gradient(
+        0deg,
+        var(--cottage-espresso),
+        var(--cottage-cinnamon)
+    ) !important;
+}
+
+/*
+ * Keep ElegantFin's detail-page geometry untouched.
+ * This only recolours its cinematic fade.
+ */
+.detailPageWrapperContainer {
+    background:
+        linear-gradient(
+            0deg,
+            var(--cottage-espresso) 0%,
+            rgba(42, 27, 18, 0.98) 34%,
+            rgba(96, 58, 41, 0.72) 66%,
+            rgba(96, 58, 41, 0.18) 88%,
+            transparent 100%
+        ) !important;
+}
+
+.noBackdropTransparency .detailPageSecondaryContainer {
+    background-color: transparent !important;
+}
+
+/* A gentle cinnamon wash over the banner without hiding the artwork */
+.itemBackdrop {
+    background-color: var(--cottage-cinnamon) !important;
+    background-blend-mode: soft-light !important;
+}
+
+/* Antique-paper header and drawer */
+.skinHeader:not(.osdHeader),
+.skinHeader-blurred:not(.osdHeader),
+.mainDrawer,
+.drawer-open,
+.MuiAppBar-root,
+.MuiDrawer-paper {
+    background-color: var(--headerColor) !important;
+    border-color: var(--cottage-paper) !important;
+}
+
+/* Espresso navigation text and icons */
+.skinHeader:not(.osdHeader),
+.skinHeader:not(.osdHeader) *,
+.mainDrawer,
+.mainDrawer *,
+.drawer-open,
+.drawer-open *,
+.MuiAppBar-root,
+.MuiAppBar-root *,
+.MuiDrawer-paper,
+.MuiDrawer-paper * {
+    color: var(--cottage-espresso) !important;
+}
+
+/* Navigation states */
+.navMenuOption-selected {
+    background-color: rgba(96, 58, 41, 0.20) !important;
+    border-color: rgba(96, 58, 41, 0.34) !important;
+}
+
+.navMenuOption:hover,
+.listItem:hover {
+    background-color: rgba(96, 58, 41, 0.11) !important;
+}
+
+/* Borders and surfaces */
+.cardScalable,
+.cardOverlayContainer,
+.visualCardBox,
+.paperList,
+.itemDetailsGroup,
+.dialog,
+.emby-select-withcolor,
+.emby-select,
+.emby-input,
+.emby-textarea,
+.detailButton,
+.btnPlay,
+.searchfields-icon,
+.mediaInfoOfficialRating,
+.sliderBubble {
+    border-color: var(--cottage-paper) !important;
+}
+
+/* Dark controls with warm cream text */
+.emby-select-withcolor,
+.emby-select,
+.emby-input,
+.emby-textarea {
+    background-color: var(--cottage-cinnamon) !important;
+    color: var(--cottage-paper-light) !important;
+}
+
+.dialog,
+.selectionCommandsPanel {
+    background-color: rgba(42, 27, 18, 0.96) !important;
+}
+
+/* Buttons and progress */
+.button-submit {
+    background-color: var(--cottage-gold) !important;
+    border-color: #D1AA75 !important;
+    color: var(--cottage-espresso) !important;
+}
+
+.itemProgressBar {
+    background-color: rgba(226, 208, 178, 0.18) !important;
+}
+
+.itemProgressBarForeground {
+    background-color: var(--cottage-gold) !important;
+}
+
+.countIndicator,
+.fullSyncIndicator,
+.mediaSourceIndicator {
+    background-color: var(--cottage-gold) !important;
+}
+
+/* Cream content text on dark surfaces */
+.detailPageWrapperContainer,
+.detailPageSecondaryContainer,
+.detailSection,
+.detailSectionContent {
+    color: var(--cottage-paper-light);
+}
+
+/* Clear remote and keyboard focus, without moving or resizing cards */
+.card:focus .cardScalable,
+.card:focus-within .cardScalable,
+.card.focused .cardScalable,
+.card[data-focusvisible-added] .cardScalable,
+.card[data-focus-visible-added] .cardScalable {
+    outline: 3px solid var(--cottage-gold) !important;
+    outline-offset: 3px !important;
+    box-shadow: 0 0 0 6px rgba(184, 137, 83, 0.28) !important;
+}
+
+/* Warm watched state */
+.playedIndicator,
+.playstatebutton-icon-played {
+    color: #A9C184 !important;
+}
+
+.playedIndicator {
+    background-color: #7F995F !important;
+}
+
+/* CottageFin footer label */
+.dashboardFooter::after {
+    content: "CottageFin";
+    font-size: .6em;
+    opacity: .55;
+}
+
+/* =========================================================
+   Top bar correction
+   Removes ElegantFin's blue overlay and restores translucency
+   ========================================================= */
+
+/* Stop inherited gradients/images from tinting the cream header */
+.skinHeader:not(.osdHeader),
+.skinHeader-blurred:not(.osdHeader),
+.skinHeader-withBackground:not(.osdHeader),
+.skinHeader.semiTransparent:not(.osdHeader),
+.MuiAppBar-root {
+    background-image: none !important;
+    background: rgba(226, 208, 178, 0.74) !important;
+    border-bottom: 1px solid rgba(42, 27, 18, 0.22) !important;
+    box-shadow: 0 0.35em 1.2em rgba(42, 27, 18, 0.12) !important;
+    -webkit-backdrop-filter: blur(14px) saturate(115%) !important;
+    backdrop-filter: blur(14px) saturate(115%) !important;
+}
+
+/* Keep the scrolled/header-pinned state translucent too */
+.headroom--pinned .skinHeader:not(.osdHeader),
+.headroom--not-top .skinHeader:not(.osdHeader),
+.skinHeader-blurred.headroom--pinned:not(.osdHeader),
+.skinHeader-blurred.headroom--not-top:not(.osdHeader) {
+    background-image: none !important;
+    background-color: rgba(226, 208, 178, 0.78) !important;
+    -webkit-backdrop-filter: blur(16px) saturate(115%) !important;
+    backdrop-filter: blur(16px) saturate(115%) !important;
+}
+
+/* Prevent pseudo-elements from adding ElegantFin's coloured wash */
+.skinHeader:not(.osdHeader)::before,
+.skinHeader:not(.osdHeader)::after,
+.MuiAppBar-root::before,
+.MuiAppBar-root::after {
+    background: none !important;
+    background-image: none !important;
+}
+
+/* =========================================================
+   Card footer
+   Extends each poster card to contain its title/subtitle text
+   ========================================================= */
+
+/* Turn the whole card box into one rounded, enclosed object */
+.cardBox {
+    background: rgba(42, 27, 18, 0.74) !important;
+    border: 1px solid rgba(226, 208, 178, 0.78) !important;
+    border-radius: 1em !important;
+    overflow: hidden !important;
+    box-shadow: 0 0.25em 0.8em rgba(42, 27, 18, 0.22) !important;
+}
+
+/* Let the artwork form the upper half of the unified card */
+.cardBox .cardScalable {
+    border: 0 !important;
+    border-radius: 1em 1em 0 0 !important;
+    overflow: hidden !important;
+}
+
+.cardBox .cardImageContainer {
+    border-radius: 1em 1em 0 0 !important;
+}
+
+/* Create a compact footer beneath the artwork */
+.cardBox .cardText {
+    margin: 0 !important;
+    padding-left: 0.8em !important;
+    padding-right: 0.8em !important;
+    color: var(--cottage-paper-light) !important;
+}
+
+.cardBox .cardText-first {
+    padding-top: 0.58em !important;
+    padding-bottom: 0.12em !important;
+    font-weight: 600 !important;
+}
+
+.cardBox .cardText-secondary,
+.cardBox .cardText-secondary + .cardText {
+    padding-top: 0 !important;
+    padding-bottom: 0.62em !important;
+    color: rgba(226, 208, 178, 0.78) !important;
+}
+
+/* Single-line titles still receive balanced footer spacing */
+.cardBox .cardText-first:last-child {
+    padding-bottom: 0.62em !important;
+}
+
+/* Keep hover/focus attached to the whole card instead of only the image */
+.card:hover .cardBox,
+.card:focus .cardBox,
+.card:focus-within .cardBox,
+.card.focused .cardBox {
+    border-color: var(--cottage-gold) !important;
+}
+
+.card:focus .cardScalable,
+.card:focus-within .cardScalable,
+.card.focused .cardScalable,
+.card[data-focusvisible-added] .cardScalable,
+.card[data-focus-visible-added] .cardScalable {
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+.card:focus .cardBox,
+.card:focus-within .cardBox,
+.card.focused .cardBox,
+.card[data-focusvisible-added] .cardBox,
+.card[data-focus-visible-added] .cardBox {
+    outline: 3px solid var(--cottage-gold) !important;
+    outline-offset: 3px !important;
+    box-shadow: 0 0 0 6px rgba(184, 137, 83, 0.28) !important;
+}
+
+
+
+
+
+
+
+
+/* =========================================================
+   Compact header (v8)
+   Slim bar with original ElegantFin button sizing/alignment.
+   ========================================================= */
+
+.skinHeader:not(.osdHeader) .headerTop,
+.skinHeader-blurred:not(.osdHeader) .headerTop{
+    height:2.4em !important;
+    min-height:2.4em !important;
+    padding:0 !important;
+}
+
+/* Only tighten the container, don't resize its contents */
+.skinHeader .headerLeft,
+.skinHeader .headerRight{
+    display:flex !important;
+    align-items:center !important;
+    height:100% !important;
+    padding:0 .35em !important;
+}
+
+/* Restore native button dimensions */
+.skinHeader .headerButton,
+.skinHeader .paper-icon-button-light{
+    width:2.75em !important;
+    height:2.75em !important;
+    min-width:2.75em !important;
+    min-height:2.75em !important;
+    margin:0 !important;
+    display:flex !important;
+    align-items:center !important;
+    justify-content:center !important;
+    align-self:center !important;
+}
+
+/* Restore native icon size */
+.skinHeader .material-icons{
+    font-size:1.6rem !important;
+    line-height:1 !important;
+}
+
+/* Keep logo aligned */
+.skinHeader .headerLogo{
+    height:1.8em !important;
+    align-self:center !important;
+}
+
+.skinHeader .pageTitle{
+    margin:0 !important;
+    line-height:normal !important;
+    align-self:center !important;
+}
