@@ -1,1337 +1,725 @@
-/* ==========================================================================
-   COTTAGEFIN v3.1
-   Cream header, coffee background, cream cards
-   Small coffee-coloured section pills
-   Cosier typography; raised pill labels; all card play buttons removed
-   ========================================================================== */
+/* ElegantFin Theme for Jellyfin by lscambo13 */
 
+@import url("https://cdn.jsdelivr.net/gh/prayag17/Jellyfin-Icons/round.css");
 
-/* ==========================================================================
-   FONTS
-   ========================================================================== */
-
-@import url("https://fonts.googleapis.com/css2?family=Berkshire+Swash&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap");
-
-
-/* ==========================================================================
-   COLOUR PALETTE
-   ========================================================================== */
-
-:root {
-    --cottage-cream: #f8e9c7;
-    --cottage-cream-light: #fff4d8;
-    --cottage-cream-dark: #ead2a3;
-
-    --coffee-deep: #3f210f;
-    --coffee-dark: #512c16;
-    --coffee-main: #684020;
-    --coffee-soft: #9f744d;
-
-    --text-dark: #442712;
-    --text-medium: #765137;
-    --text-light: #fff4dc;
-
-    --caramel: #b77d2d;
-    --gold: #d5a044;
-
-    --radius-small: 8px;
-    --radius-medium: 13px;
-    --radius-large: 18px;
+* {
+    outline: 0px dotted red !important;
+    --darkerGradientPoint: #3f210f;
+    --lighterGradientPoint: #684020;
+    --borderColor: rgba(104,64,32,.45);
+    --headerColor: rgba(248,233,199,.96);
+    --drawerColor: rgba(255,244,216,.96);
+    --lighterBorderColor: rgb(255 255 255 / 20%);
+    --selectorBackgroundColor: #ead2a3;
+    --btnSubmitColor: #684020;
+    --btnSubmitBorderColor: #9f744d;
+    --checkboxCheckedBgColor: #b77d2d;
+    --hoverGradient: linear-gradient(180deg, rgba(255,255,255,.12), rgba(255,255,255,.04));
 }
 
-
-/* ==========================================================================
-   GLOBAL FOUNDATION
-   ========================================================================== */
-
-html,
-body {
-    background: var(--coffee-dark) !important;
-    color: var(--text-light) !important;
-    font-family: "Lora", Georgia, serif !important;
+html {
+    font-family: Lora, Georgia, serif;
 }
 
-body,
-button,
-input,
-select,
-textarea {
-    font-family: "Lora", Georgia, serif !important;
+.itemsContainer,
+.vertical-list {
+    gap: .75em;
 }
 
-.backgroundContainer {
-    background: var(--coffee-dark) !important;
-}
-
-.mainAnimatedPage,
-.page,
-.pageWithAbsoluteTabs,
-.libraryPage,
-.homePage {
-    background: transparent !important;
-}
-
-
-/* ==========================================================================
-   TYPOGRAPHY
-   ========================================================================== */
-
-.sectionTitle,
-.pageTitle,
-.itemName,
-.itemName-primary,
-.detailPagePrimaryContainer h1,
-.detailPagePrimaryContainer h2,
-.detailPageContent h1,
-.detailPageContent h2,
-.formDialogHeaderTitle {
-    color: var(--text-light) !important;
-    font-family: "Chocho Aura Demo", "Chocho Aura", "Berkshire Swash", Georgia, serif !important;
-    font-weight: 400 !important;
-    letter-spacing: 0.015em !important;
-}
-
-.sectionTitle {
-    color: var(--cottage-cream-light) !important;
-    font-size: 1.55rem !important;
-    line-height: 1.15 !important;
-    text-transform: none !important;
-}
-
-.cardText,
-.cardText-first,
-.cardText-secondary,
-.cardBox .itemName,
-.cardBox .primaryText {
-    color: var(--text-dark) !important;
-}
-
-.cardText-first {
-    font-weight: 700 !important;
-}
-
-.cardText-secondary,
-.cardBox .secondaryText {
-    color: var(--text-medium) !important;
-}
-
-body .primaryText,
-body .listItemBodyText,
-body .itemOverview,
-body .overview,
-body .mediaInfoItem,
-body .metadata {
-    color: var(--text-light);
-}
-
-body .secondaryText,
-body .listItemBodyText-secondary,
-body .fieldDescription {
-    color: rgba(255, 239, 208, 0.76);
-}
-
-
-/* ==========================================================================
-   CREAM TOP HEADER
-   ========================================================================== */
-
-.skinHeader,
-.skinHeader-withBackground {
-    color: var(--text-dark) !important;
-    background: var(--cottage-cream) !important;
-    border-bottom: 1px solid rgba(69, 37, 16, 0.2) !important;
-    backdrop-filter: none !important;
-}
-
-.skinHeader *,
-.headerTop *,
-.headerTabs *,
-.headerRight * {
-    color: var(--text-dark) !important;
-}
-
-.headerTabs {
-    background: transparent !important;
-}
-
-.emby-tab-button {
-    color: rgba(68, 39, 18, 0.72) !important;
-    background: transparent !important;
-    border-radius: 999px !important;
-    font-weight: 600 !important;
-    padding-left: 1rem !important;
-    padding-right: 1rem !important;
-}
-
-.emby-tab-button:hover {
-    color: var(--text-dark) !important;
-    background: rgba(104, 64, 32, 0.1) !important;
-}
-
-.emby-tab-button-active {
-    color: var(--text-dark) !important;
-    background: rgba(104, 64, 32, 0.15) !important;
-}
-
-.skinHeader .emby-button,
-.skinHeader .headerButton {
-    color: var(--text-dark) !important;
-    background: transparent !important;
-    border: 0 !important;
-}
-
-.skinHeader .emby-button:hover,
-.skinHeader .headerButton:hover {
-    background: rgba(104, 64, 32, 0.11) !important;
-}
-
-.headerButton .material-icons,
-.headerButton .material-icons-round {
-    color: var(--text-dark) !important;
-}
-
-
-/* ==========================================================================
-   SIDE DRAWER
-   ========================================================================== */
-
-.mainDrawer {
-    color: var(--text-dark) !important;
-    background: var(--cottage-cream-light) !important;
-    border-right: 1px solid rgba(68, 39, 18, 0.18) !important;
-}
-
-.navMenuOption {
-    color: var(--text-dark) !important;
-    background: transparent !important;
-    border-radius: var(--radius-medium) !important;
-    margin: 4px 10px !important;
-}
-
-.navMenuOption:hover {
-    background: rgba(104, 64, 32, 0.11) !important;
-}
-
-.navMenuOption-selected {
-    color: var(--text-dark) !important;
-    background: rgba(104, 64, 32, 0.18) !important;
-    border-left: 4px solid var(--caramel) !important;
-}
-
-.navMenuOption .material-icons,
-.navMenuOption .material-icons-round {
-    color: var(--coffee-main) !important;
-}
-
-
-/* ==========================================================================
-   HOME SECTIONS
-   ========================================================================== */
-
-.homeSectionsContainer {
-    padding-top: 1.2rem !important;
-}
-
-.homeSectionsContainer section,
-.homeSectionsContainer .homeSection {
-    margin-bottom: 2.15rem !important;
-}
-
-.sectionTitleContainer {
-    display: flex !important;
-    align-items: center !important;
-    justify-content: flex-start !important;
-
-    width: auto !important;
-    min-height: 2.5rem !important;
-
-    margin: 0 3.3% 0.7rem !important;
-    padding: 0 !important;
-
-    color: var(--text-light) !important;
-    background: transparent !important;
-    border: 0 !important;
-}
-
-
-/* ==========================================================================
-   SMALL SECTION TITLE PILLS
-   Next Up, Recently Added, etc.
-   ========================================================================== */
-
-body .sectionTitleTextButton,
-body .sectionTitleTextButton.emby-button,
-body button.sectionTitleTextButton {
-    display: inline-flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-
-    flex: 0 0 auto !important;
-
-    width: auto !important;
-    max-width: max-content !important;
-    min-width: 0 !important;
-    min-height: 2.15rem !important;
-
-    margin: 0 !important;
-    padding: 0.35rem 1rem !important;
-
-    color: var(--cottage-cream-light) !important;
-    background: var(--coffee-soft) !important;
-
-    border: 1px solid rgba(255, 244, 216, 0.52) !important;
-    border-radius: 11px !important;
-
-
-    font-family: "Lora", Georgia, serif !important;
-    font-size: 1.05rem !important;
-    font-weight: 600 !important;
-    line-height: 1.2 !important;
-    letter-spacing: 0.01em !important;
-
-    text-align: center !important;
-    text-shadow: none !important;
-    text-transform: none !important;
-
-    transform: none !important;
-
-    transition:
-        color 160ms ease,
-        background-color 160ms ease,
-        border-color 160ms ease,
-        transform 160ms ease !important;
-}
-
-body .sectionTitleTextButton:hover,
-body .sectionTitleTextButton.emby-button:hover,
-body button.sectionTitleTextButton:hover {
-    color: var(--cottage-cream-light) !important;
-    background: var(--coffee-main) !important;
-    border-color: var(--cottage-cream) !important;
-
-
-    transform: translateY(-1px) !important;
-}
-
-/* Raise only the title text; keep the chevron vertically centred */
-body .sectionTitleTextButton .sectionTitle,
-body .sectionTitleTextButton .sectionTitle-cards,
-body .sectionTitleTextButton .button-text,
-body .sectionTitleTextButton .buttonText,
-body .sectionTitleTextButton span:not(.material-icons):not(.material-icons-round) {
-    position: relative !important;
-    top: -4.5px !important;
-}
-
-/* Prevent the icon from inheriting any vertical nudge */
-body .sectionTitleTextButton .material-icons,
-body .sectionTitleTextButton .material-icons-round {
-    top: 0 !important;
-    transform: none !important;
-}
-
-body .sectionTitleTextButton .material-icons,
-body .sectionTitleTextButton .material-icons-round {
-    display: inline-flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-
-    margin-left: 0.5rem !important;
-
-    color: var(--cottage-cream-light) !important;
-    font-size: 1rem !important;
-    line-height: 1 !important;
-    transform: none !important;
-}
-
-
-/* Hide duplicate section action button */
-
-.sectionTitleContainer > .sectionTitleButton {
-    display: none !important;
-}
-
-
-/* Carousel arrows remain at the right */
-
-.listPagingButtons {
-    display: flex !important;
-    align-items: center !important;
-    gap: 0.4rem !important;
-
-    margin-left: auto !important;
-
-    background: transparent !important;
-}
-
-.listPagingButton {
-    display: inline-flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-
-    width: 2rem !important;
-    min-width: 2rem !important;
-    height: 2rem !important;
-    min-height: 2rem !important;
-
-    padding: 0 !important;
-
-    color: var(--cottage-cream-light) !important;
-    background: rgba(63, 33, 15, 0.7) !important;
-    border: 1px solid rgba(255, 244, 216, 0.42) !important;
-    border-radius: 999px !important;
-
-}
-
-.listPagingButton:hover {
-    color: var(--coffee-deep) !important;
-    background: var(--cottage-cream) !important;
-}
-
-
-/* ==========================================================================
-   CARD LAYOUT
-   ========================================================================== */
-
-.itemsContainer {
-    gap: 1rem !important;
-}
-
-.horizontalItemsContainer {
-    column-gap: 1rem !important;
+[dir=ltr] .itemsContainer>.card>.cardBox {
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .vertical-wrap {
-    gap: 1.2rem !important;
+    justify-content: flex-start !important;
 }
 
-.card {
-    padding: 0.25rem !important;
+.countIndicator,
+.fullSyncIndicator,
+.mediaSourceIndicator {
+    background: rgb(31, 80, 189);
+    border: var(--lighterBorderColor) solid 1px;
 }
 
-.cardBox {
-    color: var(--text-dark) !important;
-    background: var(--cottage-cream-light) !important;
+.playedIndicator {
+    background: rgb(34, 197, 94);
+    border: var(--lighterBorderColor) solid 1px;
+}
 
-    border: 1px solid rgba(67, 35, 14, 0.2) !important;
-    border-radius: var(--radius-medium) !important;
-
-
+.cardScalable {
+    border-radius: 1em;
+    border: var(--borderColor) solid 1px !important;
     overflow: hidden !important;
-
-    transition:
-        transform 180ms ease,
-        border-color 180ms ease !important;
+    transition: 125ms transform;
 }
 
-.cardBox:hover {
-    transform: translateY(-4px) !important;
-    border-color: rgba(213, 160, 68, 0.8) !important;
-
-}
-
-.cardScalable,
-.cardImageContainer,
-.cardImage {
-    border-radius: calc(var(--radius-medium) - 2px) !important;
+.card:hover .cardScalable {
+    /* transform: translateY(-4px); */
+    box-shadow: rgba(0, 0, 0, 0.5) 0px 4px 4px 0px;
 }
 
 .cardImageContainer {
-    overflow: hidden !important;
+    border-radius: 1em !important
 }
-
-.cardImage {
-    transition:
-        transform 240ms ease,
-        filter 240ms ease !important;
-}
-
-.cardBox:hover .cardImage {
-    transform: scale(1.012);
-    filter: saturate(1.04) brightness(1.025);
-}
-
-.cardText {
-    padding-left: 0.65rem !important;
-    padding-right: 0.65rem !important;
-}
-
-.cardText-first {
-    padding-top: 0.52rem !important;
-    color: var(--text-dark) !important;
-    font-weight: 700 !important;
-}
-
-.cardText-secondary {
-    padding-bottom: 0.52rem !important;
-    color: var(--text-medium) !important;
-}
-
-
-/* ==========================================================================
-   CARD OVERLAYS
-   ========================================================================== */
 
 .cardOverlayContainer {
-    background: linear-gradient(
-        180deg,
-        transparent 40%,
-        rgba(40, 17, 5, 0.78) 100%
-    ) !important;
+    border-radius: 1em !important;
+    border: solid rgb(255 255 255 / 65%) .1em;
+    mix-blend-mode: plus-lighter;
+    background: var(--hoverGradient);
 }
 
-.cardOverlayButton,
-.cardOverlayButton-br {
-    color: var(--text-dark) !important;
-    background: var(--cottage-cream) !important;
-    border: 1px solid rgba(68, 39, 18, 0.22) !important;
-    border-radius: 999px !important;
+.cardBox:not(.visualCardBox) .cardPadder {
+    border-radius: 1em;
 }
 
-.cardOverlayButton:hover,
-.cardOverlayButton-br:hover {
-    color: var(--cottage-cream-light) !important;
-    background: var(--coffee-main) !important;
+.cardOverlayContainer>.cardOverlayFab-primary {
+    display: none;
 }
 
 
+@media (min-width: 31.25em) {
 
-/* ==========================================================================
-   CARD PLAY BUTTON VISIBILITY
-   Remove play controls from every media card, including Continue Watching.
-   Menus and non-play card actions remain available.
-   ========================================================================== */
-
-.card .cardOverlayFab-primary,
-.card .playButton,
-.card .playButtonContainer,
-.card button[data-action="play"],
-.card button[is="emby-button"][title="Play"],
-.card button[aria-label="Play"],
-.card button[title="Play"],
-.cardOverlayContainer .cardOverlayFab-primary {
-    display: none !important;
+    .portraitCard,
+    .smallBackdropCard,
+    .squareCard {
+        /* width: 33.3333333333% !important; */
+        width: 30% !important;
+    }
 }
 
+@media (min-width: 43.75em) {
 
-/* ==========================================================================
-   PROGRESS BARS
-   ========================================================================== */
-
-.itemProgressBar,
-.mdl-slider-background-flex {
-    background: rgba(57, 26, 8, 0.58) !important;
+    .portraitCard,
+    .squareCard {
+        /* width: 25% !important; */
+        width: 23% !important;
+    }
 }
 
-.itemProgressBarForeground,
-.mdl-slider-background-lower {
-    background: var(--gold) !important;
+@media (min-width: 50em) {
+
+    .portraitCard,
+    .squareCard {
+        /* width: 20% !important; */
+        width: 23% !important;
+    }
 }
 
-
-/* ==========================================================================
-   GENERAL BUTTONS
-   ========================================================================== */
-
-.emby-button,
-.button-submit,
-.raised,
-.fab {
-    color: var(--text-dark) !important;
-    background: var(--cottage-cream) !important;
-
-    border: 1px solid rgba(68, 39, 18, 0.22) !important;
-    border-radius: var(--radius-medium) !important;
-
-
-    transition:
-        color 160ms ease,
-        background-color 160ms ease,
-        transform 160ms ease !important;
+@media (min-width: 25em) {
+    .backdropCard {
+        /* width: 50%; */
+        width: 49%;
+    }
 }
 
-.emby-button:hover,
-.button-submit:hover,
-.raised:hover,
-.fab:hover {
-    color: var(--cottage-cream-light) !important;
-    background: var(--coffee-soft) !important;
-
-    transform: translateY(-1px);
-
+@media (min-width: 48.125em) {
+    .backdropCard {
+        /* width: 33.3333333333%; */
+        width: 32%;
+    }
 }
 
-.skinHeader .emby-button,
-.skinHeader .headerButton {
-    color: var(--text-dark) !important;
-    background: transparent !important;
-    border: 0 !important;
+.detailLogo {
+    display: none;
 }
 
-.skinHeader .emby-button:hover,
-.skinHeader .headerButton:hover {
-    color: var(--text-dark) !important;
-    background: rgba(104, 64, 32, 0.11) !important;
+h1 {
+    font-size: 3em;
 }
 
+.detailPagePrimaryContainer {
+    align-content: space-between;
+    align-items: stretch;
+    justify-content: end;
+    flex-direction: column;
+}
 
-/* ==========================================================================
-   INPUTS
-   ========================================================================== */
+.portraitCard {
+    min-width: 5em;
+    width: 30%;
+    max-width: 15em;
+}
 
-.emby-input,
+.headerHomeButton,
+.headerSyncButton,
+.cardOverlayButton {
+    display: none;
+}
+
+.pageTitle {
+    height: 1.5em;
+}
+
+.paper-icon-button-light>.material-icons {
+    font-size: 1.25em;
+}
+
+.detailRibbon {
+    background-color: transparent;
+}
+
+.detailPageWrapperContainer {
+    padding-top: 30vh;
+    background: linear-gradient(0deg, var(--darkerGradientPoint) 85%, transparent);
+    margin-top: -40vh;
+}
+
+@media (orientation: portrait) and (max-width: 40em) {
+    .layout-mobile .itemBackdrop {
+        height: 40vh;
+        opacity: .35;
+    }
+}
+
+.itemBackdrop {
+    height: 45vh;
+}
+
+h2 {
+    font-size: 1.25em;
+}
+
+h1,
+h2 {
+    font-weight: 600;
+}
+
+.tagline {
+    font-size: 1.3em;
+    font-style: italic;
+    font-weight: 400;
+    margin-bottom: 0;
+}
+
+.backgroundContainer,
+.nowPlayingPlaylist,
+.nowPlayingContextMenu,
+html {
+    background: linear-gradient(0deg, var(--darkerGradientPoint), var(--lighterGradientPoint));
+}
+
+.skinHeader-blurred:not(.osdHeader) {
+    background-color: var(--headerColor) !important;
+    backdrop-filter: blur(5px) !important;
+}
+
+.headroom--unpinned {
+    -webkit-transform: translateY(-3.5em);
+    transform: translateY(-3.5em);
+}
+
+.skinHeader:not(.osdHeader) {
+    border-style: solid;
+    border-width: 0 0 1px 0;
+    border-color: var(--borderColor);
+    transition: all .375s ease-in-out;
+}
+
+.itemProgressBar {
+    background-color: rgb(123 123 123 / 30%) !important;
+    height: .2em;
+    overflow: hidden;
+    border-radius: 1em;
+}
+
+.itemProgressBarForeground {
+    border-radius: 1em;
+    background-color: rgb(214 144 255 / 65%)
+}
+
+.selectLabel {
+    max-height: 2em;
+}
+
+.detailsGroupItem,
+.trackSelections .selectContainer {
+    /*flex-direction: column;*/
+    align-items: center;
+}
+
+.layout-mobile .mainDetailButtons {
+    margin-top: 2em;
+}
+
+.emby-select-withcolor,
 .emby-select,
+.emby-input,
 .emby-textarea {
-    color: var(--text-dark) !important;
-    background: var(--cottage-cream-light) !important;
-
-    border: 1px solid rgba(68, 39, 18, 0.3) !important;
-    border-radius: var(--radius-small) !important;
-
+    background-color: var(--selectorBackgroundColor);
+    border: var(--lighterBorderColor) solid 1px;
+    border-radius: .5em;
+    padding: .5em !important;
 }
 
-.emby-input:focus,
-.emby-select:focus,
-.emby-textarea:focus {
-    border-color: var(--caramel) !important;
-    outline: 2px solid rgba(183, 125, 45, 0.55) !important;
-    outline-offset: 1px !important;
+.trackSelections .selectContainer .detailTrackSelect {
+    /* padding: inherit; */
 }
 
-.inputLabel,
-.selectLabel,
-.textareaLabel {
-    color: var(--cottage-cream-light) !important;
+.selectArrowContainer {
+    top: .5em;
+    opacity: .5;
 }
 
-
-/* ==========================================================================
-   DIALOGS AND POPUPS
-   ========================================================================== */
-
-.dialog,
-.formDialog,
-.actionSheet,
-.listPopupMenu,
-.focuscontainer,
-.toast {
-    color: var(--text-dark) !important;
-    background: var(--cottage-cream-light) !important;
-
-    border: 1px solid rgba(68, 39, 18, 0.24) !important;
-    border-radius: var(--radius-medium) !important;
-
+.btnPlay {
+    background-color: rgba(255, 255, 255, 0.05);
+    /* border-radius: .5em 0em 0em .5em; */
+    border: solid var(--lighterBorderColor) 1px;
 }
 
-.dialogHeader,
-.formDialogHeader {
-    color: var(--text-dark) !important;
-    background: var(--cottage-cream) !important;
+.searchfields-icon {
+    padding: .125em;
+    /* margin: 0 !important; */
+    margin-right: .25em;
+    margin-bottom: 0;
+    border-radius: .25em;
+    background-color: rgba(255, 255, 255, 0.05);
+    /* border-radius: .5em 0em 0em .5em; */
+    border: solid var(--lighterBorderColor) 1px;
 }
 
-.actionSheetMenuItem,
-.listPopupMenuItem {
-    color: var(--text-dark) !important;
-}
-
-.actionSheetMenuItem:hover,
-.listPopupMenuItem:hover {
-    background: rgba(104, 64, 32, 0.12) !important;
+.btnPlay>.detailButton-content {
+    -webkit-align-items: unset;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: unset;
+    flex-direction: unset;
+    -webkit-justify-content: unset;
+    align-content: unset;
+    justify-content: flex-start;
 }
 
 
-/* ==========================================================================
-   LISTS
-   ========================================================================== */
-
-.paperList,
-.listItem {
-    color: var(--text-dark) !important;
-    background: var(--cottage-cream-light) !important;
-    border-color: rgba(68, 39, 18, 0.14) !important;
-}
-
-.listItem {
-    border-radius: var(--radius-small) !important;
-}
-
-.listItem:hover {
-    background: var(--cottage-cream-dark) !important;
-}
-
-.listItem .primaryText,
-.listItem .listItemBodyText {
-    color: var(--text-dark) !important;
-}
-
-.listItem .secondaryText,
-.listItem .listItemBodyText-secondary {
-    color: var(--text-medium) !important;
+.btnPlay>.detailButton-content::after {
+    padding-left: .25em;
+    content: "Play";
 }
 
 
-/* ==========================================================================
-   DETAIL PAGES
-   ========================================================================== */
-
-.detailPagePrimaryContainer,
-.detailPageContent {
-    color: var(--text-light) !important;
+/* 
+.btnMoreCommands{
+    border-radius: 0em .5em .5em 0em;
+    border: solid var(--lighterBorderColor) 1px;
 }
 
-.detailPagePrimaryContent {
-    background: linear-gradient(
-        180deg,
-        rgba(63, 33, 15, 0.05),
-        rgba(63, 33, 15, 0.75)
-    ) !important;
+.btnUserRating,.btnCancelSeriesTimer,.btnShuffle,.btnInstantMix,.btnPlayTrailer,.btnPlaystate,.btnReplay{
+    border-radius: 0em 0em 0em 0em;
+    border: solid var(--lighterBorderColor) 1px;
+} */
+
+
+.mainDrawer,
+.drawer-open {
+    background-color: var(--drawerColor);
+    border-right: solid var(--borderColor) 1px;
+    backdrop-filter: blur(8px);
 }
 
-.detailPagePrimaryContainer h1,
-.detailPagePrimaryContainer h2,
-.detailPageContent h1,
-.detailPageContent h2 {
-    color: var(--cottage-cream-light) !important;
-}
-
-.itemDetailImage,
-.detailImageContainer .cardBox {
-    border-radius: var(--radius-large) !important;
+.mediaInfoOfficialRating {
+    border-radius: .5em;
+    font-size: 66%;
+    margin: 0em 1em .25em 0em !important;
+    padding: 0em 0.5em;
+    background: transparent !important;
+    border: solid 1px var(--borderColor);
 }
 
 .detailButton {
-    color: var(--text-dark) !important;
-    background: var(--cottage-cream) !important;
-    border-radius: 999px !important;
+    border-radius: .5em;
+    border: solid var(--lighterBorderColor) 1px;
+    padding: .5em .5em !important;
+    margin: 0.125em !important;
 }
 
-.detailButton:hover {
-    color: var(--cottage-cream-light) !important;
-    background: var(--coffee-soft) !important;
+.button-flat:hover {
+    color: unset;
 }
 
-.detailPageWrapperContainer::before {
-    background: linear-gradient(
-        180deg,
-        rgba(48, 21, 7, 0.08) 0%,
-        rgba(63, 33, 15, 0.72) 66%,
-        var(--coffee-deep) 100%
-    ) !important;
+.playstatebutton-icon-played {
+    color: rgb(34, 197, 94);
+}
+
+.itemDetailsGroup {
+    border: solid var(--borderColor) 1px;
+    margin-top: 1.5em;
+    border-radius: .5em;
+    /* margin: .5em 1em; */
+}
+
+.itemDetailsGroup>div:not(:last-child) {
+    border-bottom: solid var(--borderColor) 1px;
+}
+
+.detailsGroupItem {
+    margin: 0 !important;
+    justify-content: space-between;
+    padding: 0.5em 0.9em;
+    align-items: baseline;
+}
+
+.detailsGroupItem>.label {
+    font-weight: 600;
+    flex-basis: 6em;
+}
+
+.detailsGroupItem>.content>a {
+    font-weight: 400;
+    text-align: end;
+}
+
+.detailsGroupItem>.content {
+    text-align: end;
+}
+
+.genresGroup,
+.directorsGroup,
+.writersGroup {
+    /* border-bottom: solid var(--borderColor) 1px; */
+}
+
+.itemTags,
+.itemTags>a {
+    display: none;
+    font-size: unset !important;
+    font-weight: 200;
+}
+
+.detail-clamp-text {
+    text-align: start;
+}
+
+.itemMiscInfo {
+    align-items: flex-end !important;
+}
+
+.innerCardFooter,
+.chapterThumbTextContainer {
+    background: transparent;
+    /* display: flex; */
+    font-weight: 500;
+    text-shadow: 1px 1px 0px black;
+    padding: 1em;
+    width: auto;
+}
+
+.centerMessage {
+    width: unset;
 }
 
 
-/* ==========================================================================
-   CHECKBOXES AND SWITCHES
-   ========================================================================== */
+.dialogContainer {
+    /* backdrop-filter: blur(5px);
+    background-color: rgb(0 0 0 / 60%); */
+}
+
+.dialog {
+    backdrop-filter: blur(5px);
+    background-color: var(--drawerColor);
+    border-radius: .75em !important;
+    border: solid var(--borderColor) 1px;
+}
+
+.collapseContent {
+    background-color: unset !important;
+    backdrop-filter: unset !important;
+}
+
+.selectionCommandsPanel {
+    background: var(--lighterGradientPoint);
+    border-bottom: solid var(--borderColor) 1px;
+    backdrop-filter: blur(10px);
+}
+
+.itemSelectionPanel {
+    border: unset;
+    background-color: transparent;
+}
+
+/* .emby-checkbox:checked+span+.checkboxOutline {
+    background-color: var(--checkboxCheckedBgColor);
+    border-color: var(--checkboxCheckedBgColor);
+} */
+
+.emby-checkbox:checked+span+.checkboxOutline {
+    border-radius: .375em !important;
+    box-shadow: inset 0em 7em 10em 20px rgba(0, 0, 0, 0.8);
+    background: transparent;
+    border-color: white;
+    border-style: groove;
+    border-width: 2px;
+}
 
 .checkboxOutline {
-    border-color: var(--caramel) !important;
-}
-
-.emby-checkbox:checked + span + .checkboxOutline,
-.emby-checkbox:checked + .checkboxOutline {
-    color: var(--text-dark) !important;
-    background: var(--cottage-cream) !important;
-    border-color: var(--cottage-cream) !important;
-}
-
-.mdl-switch__input:checked
-    + .mdl-switch__label
-    + .mdl-switch__trackContainer
-    .mdl-switch__track {
-    background: rgba(213, 160, 68, 0.46) !important;
-}
-
-.mdl-switch__input:checked
-    + .mdl-switch__label
-    + .mdl-switch__trackContainer
-    .mdl-switch__thumb {
-    background: var(--gold) !important;
+    /* background-color: rgb(255, 255, 255); */
+    top: unset;
+    height: 1.3em;
+    width: 1.3em;
+    border-radius: .375em;
 }
 
 
-/* ==========================================================================
-   SCROLLBARS
-   ========================================================================== */
-
-::-webkit-scrollbar {
-    width: 11px;
-    height: 11px;
+.itemSelectionPanel .material-icons.check:before {
+    font-size: 4em;
+    color: #ffffff;
+    padding: .25em;
 }
 
-::-webkit-scrollbar-track {
-    background: var(--coffee-deep);
+.cardText-first+.itemSelectionPanel>.checkboxContainer {
+    /* height: calc(100% - 3em); */
+    height: calc(100% - 1.75em);
 }
 
-::-webkit-scrollbar-thumb {
-    background: var(--coffee-soft);
-    border: 2px solid var(--coffee-deep);
-    border-radius: 999px;
+.cardText-first+.itemSelectionPanel>.checkboxContainer>.emby-checkbox:checked+span+.checkboxOutline {
+    border-radius: 1em !important;
 }
 
-::-webkit-scrollbar-thumb:hover {
-    background: var(--gold);
+.cardText-secondary+.itemSelectionPanel>.checkboxContainer>.emby-checkbox:checked+span+.checkboxOutline {
+    border-radius: 1em !important;
 }
 
-
-/* ==========================================================================
-   SELECTION AND FOCUS
-   ========================================================================== */
-
-::selection {
-    color: var(--text-dark);
-    background: var(--cottage-cream);
+.cardText-secondary+.itemSelectionPanel>.checkboxContainer {
+    /* height: calc(100% - 3em); */
+    height: calc(100% - 3.125em);
 }
 
-:focus-visible {
-    outline: 3px solid rgba(213, 160, 68, 0.88) !important;
-    outline-offset: 2px !important;
+.cardScalable+.itemSelectionPanel>.checkboxContainer>.emby-checkbox:checked+span+.checkboxOutline {
+    border-radius: 1em !important;
 }
 
-
-/* ==========================================================================
-   MOBILE
-   ========================================================================== */
-
-@media (max-width: 800px) {
-    .sectionTitleContainer {
-        margin-left: 1rem !important;
-        margin-right: 1rem !important;
-    }
-
-    body .sectionTitleTextButton,
-    body .sectionTitleTextButton.emby-button,
-    body button.sectionTitleTextButton {
-        min-height: 2rem !important;
-        padding: 0.3rem 0.8rem !important;
-        font-size: 0.95rem !important;
-    }
-
-    .itemsContainer,
-    .horizontalItemsContainer {
-        gap: 0.65rem !important;
-    }
-
-    .card {
-        padding: 0.15rem !important;
-    }
+.cardScalable+.itemSelectionPanel>.checkboxContainer {
+    /* height: calc(100% - 3em); */
+    height: calc(100% - 0em);
 }
 
-
-
-
-/* ==========================================================================
-   ELEGANTFIN-INSPIRED CINEMATIC DETAIL PAGE
-   Movie / series pages only. CottageFin colours retained.
-   ========================================================================== */
-
-#itemDetailPage {
-    --detail-side-padding: clamp(1.25rem, 4vw, 5rem);
-    --detail-content-width: 86rem;
-    --detail-poster-width: clamp(12rem, 17vw, 17rem);
+.checkboxOutline.multiSelectCheckboxOutline {
+    border-radius: 1em;
+    border-width: 0;
+    width: 100%;
+    height: 100%;
 }
 
-#itemDetailPage .detailPageWrapperContainer {
-    position: relative !important;
-    z-index: 2 !important;
-    width: 100% !important;
-    max-width: none !important;
-    min-height: 48vh !important;
-    margin-top: 0 !important;
-    padding-top: 0 !important;
-    background:
-        linear-gradient(
-            180deg,
-            rgba(63, 33, 15, 0) 0%,
-            rgba(63, 33, 15, 0.18) 28%,
-            rgba(63, 33, 15, 0.84) 72%,
-            var(--coffee-deep) 100%
-        ) !important;
+.cardIndicators {
+    -webkit-align-items: center;
+    /* padding: 1em; */
+    top: .2em;
 }
 
-#itemDetailPage .itemBackdrop {
-    display: block !important;
-    position: relative !important;
-    width: 100% !important;
-    height: clamp(30rem, 72vh, 52rem) !important;
-    margin: 0 !important;
-    background-position: center 18% !important;
-    background-size: cover !important;
-    opacity: 0.9 !important;
-    filter: saturate(0.92) contrast(1.03) brightness(0.82) !important;
-    -webkit-mask-image: linear-gradient(
-        to bottom,
-        #000 0%,
-        #000 42%,
-        rgba(0, 0, 0, 0.86) 61%,
-        rgba(0, 0, 0, 0.3) 82%,
-        transparent 100%
-    ) !important;
-    mask-image: linear-gradient(
-        to bottom,
-        #000 0%,
-        #000 42%,
-        rgba(0, 0, 0, 0.86) 61%,
-        rgba(0, 0, 0, 0.3) 82%,
-        transparent 100%
-    ) !important;
+.indicator {
+    /* background: rgb(146 146 146 / 20%); */
+    border: solid rgb(124 124 124 / 50%) 1px;
+    /* padding: .1em; */
+    border-radius: 100em;
 }
 
-#itemDetailPage .detailPagePrimaryContainer {
-    display: flex !important;
-    align-items: flex-end !important;
-    justify-content: center !important;
-    width: 100% !important;
-    max-width: none !important;
-    margin: clamp(-18rem, -24vh, -12rem) auto 0 !important;
-    padding: 0 var(--detail-side-padding) 2rem !important;
-    background: transparent !important;
-    text-align: left !important;
+.defaultCardBackground {
+    background: var(--lighterGradientPoint) !important;
 }
 
-#itemDetailPage .detailPagePrimaryContainer > .detailPagePrimaryContent,
-#itemDetailPage .detailPagePrimaryContent {
-    display: grid !important;
-    grid-template-columns: var(--detail-poster-width) minmax(0, 1fr) !important;
-    align-items: end !important;
-    column-gap: clamp(1.5rem, 3vw, 3.5rem) !important;
-    width: min(100%, var(--detail-content-width)) !important;
-    max-width: var(--detail-content-width) !important;
-    margin: 0 auto !important;
-    padding: 0 !important;
+.listItemImage {
+    border-radius: .5em;
 }
 
-#itemDetailPage .detailImageContainer {
-    grid-column: 1 !important;
-    grid-row: 1 / span 6 !important;
-    align-self: end !important;
-    width: var(--detail-poster-width) !important;
-    min-width: 0 !important;
-    margin: 0 !important;
-    padding: 0 !important;
+.emby-button.block,
+#btnDeleteImage,
+.dashboardActionsContainer>.emby-button {
+    color: #fff;
+    border-radius: .5em;
+    background: var(--lighterGradientPoint);
+    border: solid var(--borderColor) 1px;
 }
 
-#itemDetailPage .detailImageContainer .card {
-    display: block !important;
-    position: relative !important;
-    inset: auto !important;
-    float: none !important;
-    width: 100% !important;
-    max-width: none !important;
-    margin: 0 !important;
-    border-radius: var(--radius-large) !important;
-    overflow: hidden !important;
+#btnDeleteImage {
+    background: rgb(169, 29, 29);
+    border: solid rgb(217, 84, 84) 1px;
 }
 
-#itemDetailPage .detailImageContainer .cardBox,
-#itemDetailPage .detailImageContainer .cardScalable,
-#itemDetailPage .detailImageContainer .cardImageContainer,
-#itemDetailPage .detailImageContainer .cardImage {
-    border-radius: var(--radius-large) !important;
+.button-submit {
+    background: var(--btnSubmitColor) !important;
+    border: solid var(--btnSubmitBorderColor) 1px !important;
 }
 
-#itemDetailPage .infoWrapper {
-    grid-column: 2 !important;
-    display: flex !important;
+.collapseContent,
+.formDialogFooter:not(.formDialogFooter-clear),
+.formDialogHeader:not(.formDialogHeader-clear) {
+    background-color: var(--headerColor);
+    backdrop-filter: blur(5px);
+}
+
+.visualCardBox,
+.paperList {
+    background-color: var(--headerColor) !important;
+    border-radius: 1em !important;
+    border: solid var(--borderColor) 1px !important;
+    box-shadow: unset !important;
+    /* backdrop-filter: blur(5px); */
+}
+
+.listItemIcon:not(.listItemIcon-transparent) {
+    background-color: var(--lighterGradientPoint) !important;
+}
+
+.readOnlyContent {
     flex-direction: column !important;
-    align-items: flex-start !important;
-    justify-content: flex-end !important;
-    min-width: 0 !important;
-    padding: 0 !important;
-    text-align: left !important;
 }
 
-#itemDetailPage .detailLogo {
-    position: static !important;
-    display: block !important;
-    width: min(34rem, 60vw) !important;
-    max-width: 100% !important;
-    height: clamp(6rem, 15vh, 11rem) !important;
-    margin: 0 0 1rem !important;
-    transform: none !important;
-    background-position: left bottom !important;
-    background-size: contain !important;
+.MuiAppBar-root {
+    background: var(--headerColor);
+    backdrop-filter: blur(5px);
+    border-bottom: solid var(--borderColor) 1px;
 }
 
-#itemDetailPage .detailLogo.hide {
-    display: none !important;
+.MuiDrawer-paper {
+    background: var(--drawerColor);
+    backdrop-filter: blur(5px);
+    border-right: solid var(--borderColor) 1px;
 }
 
-#itemDetailPage .nameContainer {
-    width: 100% !important;
-    margin: 0 !important;
-    text-align: left !important;
+[dir=ltr] .navMenuOption {
+    padding: .75em 1em !important;
+    /* padding: 1.25em 0.25em 0.25em 1.5em !important; */
 }
 
-#itemDetailPage .nameContainer > h1.itemName,
-#itemDetailPage .nameContainer > h1.parentName {
-    max-width: 18ch !important;
-    margin: 0 0 0.35rem !important;
-    padding: 0 !important;
-    color: var(--cottage-cream-light) !important;
-    font-family: "Chocho Aura Demo", "Chocho Aura", "Berkshire Swash", Georgia, serif !important;
-    font-size: clamp(2.7rem, 5vw, 5.8rem) !important;
-    font-weight: 400 !important;
-    line-height: 0.96 !important;
-    letter-spacing: 0.005em !important;
-    text-shadow: 0 0.15rem 1.2rem rgba(20, 8, 2, 0.5) !important;
+[dir=ltr] .listItem {
+    /* padding: .75em 1em !important; */
+    padding: 0.25em 0.25em 0.25em 1.5em !important;
 }
 
-#itemDetailPage .detailLogo:not(.hide) ~ .detailPageWrapperContainer .nameContainer h1 {
-    display: none !important;
+.navMenuOption {
+    border-radius: .5em !important;
+    margin: .5em 1em !important;
 }
 
-#itemDetailPage .detailLogo.hide ~ .detailPageWrapperContainer .nameContainer h1 {
-    display: block !important;
+.listItem:hover,
+.navMenuOption:hover {
+    background: rgba(255, 255, 255, 0.125);
+    border-radius: .8em;
 }
 
-#itemDetailPage .itemMiscInfo,
-#itemDetailPage .itemMiscInfo-primary {
-    display: flex !important;
-    flex-wrap: wrap !important;
-    align-items: center !important;
-    gap: 0.45rem 0.7rem !important;
-    margin: 0.45rem 0 0.9rem !important;
-    color: rgba(255, 244, 216, 0.84) !important;
+.navMenuOption-selected {
+    background-color: rgb(201 143 255 / 42%) !important;
+    border: solid rgb(255 255 255 / 20%) 1px;
 }
 
-#itemDetailPage .mediaInfoItem {
-    color: rgba(255, 244, 216, 0.86) !important;
-    font-weight: 600 !important;
+.noBackdropTransparency .detailPageSecondaryContainer {
+    background-color: transparent;
 }
 
-#itemDetailPage .mediaInfoOfficialRating {
-    padding: 0.1rem 0.45rem !important;
-    border: 1px solid rgba(255, 244, 216, 0.45) !important;
-    border-radius: 0.35rem !important;
-    background: rgba(63, 33, 15, 0.38) !important;
-    color: var(--cottage-cream-light) !important;
+.detailSection {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    max-width: unset !important;
 }
 
-#itemDetailPage .mainDetailButtons {
-    display: flex !important;
-    flex-wrap: wrap !important;
-    align-items: center !important;
-    justify-content: flex-start !important;
-    gap: 0.55rem !important;
-    width: 100% !important;
-    margin: 0.2rem 0 1.2rem !important;
-    padding: 0 !important;
+.trackSelections {
+    order: 2;
+    max-width: unset !important;
 }
 
-#itemDetailPage .detailButton {
-    margin: 0 !important;
+.detailsGroupItem,
+.trackSelections .selectContainer {
+    max-width: unset !important;
 }
 
-#itemDetailPage .detailButton:not(.btnPlay) {
-    display: inline-flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    width: 2.85rem !important;
-    min-width: 2.85rem !important;
-    height: 2.85rem !important;
-    padding: 0 !important;
-    color: var(--cottage-cream-light) !important;
-    background: rgba(63, 33, 15, 0.64) !important;
-    border: 1px solid rgba(255, 244, 216, 0.34) !important;
-    border-radius: 999px !important;
-    backdrop-filter: blur(10px) !important;
+.detailSectionContent {
+    order: 1;
 }
 
-#itemDetailPage .detailButton:not(.btnPlay):hover {
-    color: var(--coffee-deep) !important;
-    background: var(--cottage-cream) !important;
-    border-color: var(--cottage-cream-light) !important;
+.itemDetailsGroup {
+    order: 3;
 }
 
-#itemDetailPage .btnPlay.detailButton {
-    display: inline-flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    flex-direction: row !important;
-    min-width: 9.5rem !important;
-    min-height: 3rem !important;
-    padding: 0.55rem 1.25rem !important;
-    color: var(--coffee-deep) !important;
-    background: var(--cottage-cream-light) !important;
-    border: 1px solid rgba(68, 39, 18, 0.2) !important;
-    border-radius: 999px !important;
-    font-weight: 800 !important;
+.sliderBubble {
+    border-radius: 1em;
+    border: solid 1px var(--borderColor);
+    overflow: hidden;
 }
 
-#itemDetailPage .btnPlay.detailButton:hover {
-    color: var(--cottage-cream-light) !important;
-    background: var(--coffee-soft) !important;
+.listItem-border {
+    border-color: transparent !important;
 }
 
-#itemDetailPage .btnPlay:not(.formDialogFooterItem):not(.play-button)::after {
-    content: attr(title) !important;
-    padding-left: 0.45rem !important;
+.dashboardFooter::after {
+    content: "ElegantFin v24.12.01";
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: .6em;
+    opacity: .5;
 }
-
-#itemDetailPage .detailPageSecondaryContainer,
-#itemDetailPage .detailPageContent {
-    position: relative !important;
-    z-index: 3 !important;
-    width: min(calc(100% - (2 * var(--detail-side-padding))), var(--detail-content-width)) !important;
-    max-width: var(--detail-content-width) !important;
-    margin: 0 auto !important;
-    padding: 0 0 3rem !important;
-    background: transparent !important;
-}
-
-#itemDetailPage .detailSection {
-    display: grid !important;
-    grid-template-columns: minmax(0, 1.7fr) minmax(17rem, 0.8fr) !important;
-    gap: 1.5rem 2rem !important;
-    width: 100% !important;
-    max-width: none !important;
-    margin: 0 !important;
-}
-
-#itemDetailPage .detailSectionContent {
-    grid-column: 1 !important;
-    align-content: start !important;
-    min-height: 0 !important;
-    padding: 1.4rem 1.5rem !important;
-    color: var(--text-light) !important;
-    background: rgba(63, 33, 15, 0.52) !important;
-    border: 1px solid rgba(255, 244, 216, 0.16) !important;
-    border-radius: var(--radius-large) !important;
-    backdrop-filter: blur(10px) !important;
-}
-
-#itemDetailPage .tagline {
-    margin-bottom: 0.8rem !important;
-    color: var(--cottage-cream-dark) !important;
-    font-family: "Chocho Aura Demo", "Chocho Aura", "Berkshire Swash", Georgia, serif !important;
-    font-size: 1.2rem !important;
-    font-style: italic !important;
-}
-
-#itemDetailPage .overview,
-#itemDetailPage .itemOverview {
-    max-width: 70ch !important;
-    margin: 0 !important;
-    color: rgba(255, 244, 220, 0.9) !important;
-    font-size: 1.02rem !important;
-    line-height: 1.7 !important;
-}
-
-#itemDetailPage .itemDetailsGroup {
-    grid-column: 2 !important;
-    align-self: start !important;
-    margin: 0 !important;
-    overflow: hidden !important;
-    color: var(--text-dark) !important;
-    background: var(--cottage-cream-light) !important;
-    border: 1px solid rgba(68, 39, 18, 0.2) !important;
-    border-radius: var(--radius-large) !important;
-}
-
-#itemDetailPage .detailsGroupItem {
-    display: flex !important;
-    align-items: baseline !important;
-    justify-content: space-between !important;
-    gap: 1rem !important;
-    margin: 0 !important;
-    padding: 0.72rem 1rem !important;
-    border-bottom: 1px solid rgba(68, 39, 18, 0.12) !important;
-}
-
-#itemDetailPage .detailsGroupItem:last-child {
-    border-bottom: 0 !important;
-}
-
-#itemDetailPage .detailsGroupItem > .label {
-    flex: 0 0 6rem !important;
-    color: var(--text-dark) !important;
-    font-weight: 800 !important;
-}
-
-#itemDetailPage .detailsGroupItem > .content,
-#itemDetailPage .detailsGroupItem > .content a {
-    color: var(--text-medium) !important;
-    text-align: right !important;
-}
-
-#itemDetailPage .trackSelections {
-    grid-column: 1 / -1 !important;
-    margin: 0 !important;
-    padding: 1rem !important;
-    color: var(--text-dark) !important;
-    background: var(--cottage-cream-light) !important;
-    border: 1px solid rgba(68, 39, 18, 0.2) !important;
-    border-radius: var(--radius-large) !important;
-}
-
-#itemDetailPage .verticalSection,
-#itemDetailPage .emby-scroller-container {
-    width: 100% !important;
-    max-width: none !important;
-}
-
-#itemDetailPage .verticalSection > .sectionTitleContainer,
-#itemDetailPage .verticalSection > h2.sectionTitle {
-    margin-left: 0 !important;
-    margin-right: 0 !important;
-}
-
-#itemDetailPage .emby-scroller,
-#itemDetailPage .scrollX {
-    margin-left: 0 !important;
-    margin-right: 0 !important;
-    padding-left: 0 !important;
-}
-
-@media (max-width: 900px) {
-    #itemDetailPage {
-        --detail-side-padding: 1rem;
-        --detail-poster-width: min(46vw, 13rem);
-    }
-
-    #itemDetailPage .itemBackdrop {
-        position: sticky !important;
-        top: -10vh !important;
-        height: 48vh !important;
-        background-position: center top !important;
-    }
-
-    #itemDetailPage .detailPagePrimaryContainer {
-        margin-top: -9rem !important;
-        padding-bottom: 1.3rem !important;
-    }
-
-    #itemDetailPage .detailPagePrimaryContainer > .detailPagePrimaryContent,
-    #itemDetailPage .detailPagePrimaryContent {
-        grid-template-columns: 1fr !important;
-        justify-items: center !important;
-        row-gap: 1.1rem !important;
-    }
-
-    #itemDetailPage .detailImageContainer {
-        grid-column: 1 !important;
-        grid-row: auto !important;
-        width: var(--detail-poster-width) !important;
-    }
-
-    #itemDetailPage .infoWrapper {
-        grid-column: 1 !important;
-        align-items: center !important;
-        width: 100% !important;
-        text-align: center !important;
-    }
-
-    #itemDetailPage .detailLogo {
-        width: min(90vw, 28rem) !important;
-        height: 7rem !important;
-        margin: 0 auto 0.75rem !important;
-        background-position: center bottom !important;
-    }
-
-    #itemDetailPage .nameContainer,
-    #itemDetailPage .nameContainer > h1.itemName,
-    #itemDetailPage .nameContainer > h1.parentName {
-        max-width: 100% !important;
-        text-align: center !important;
-    }
-
-    #itemDetailPage .nameContainer > h1.itemName,
-    #itemDetailPage .nameContainer > h1.parentName {
-        font-size: clamp(2.2rem, 10vw, 3.5rem) !important;
-        line-height: 1 !important;
-    }
-
-    #itemDetailPage .itemMiscInfo,
-    #itemDetailPage .itemMiscInfo-primary,
-    #itemDetailPage .mainDetailButtons {
-        justify-content: center !important;
-    }
-
-    #itemDetailPage .detailPageSecondaryContainer,
-    #itemDetailPage .detailPageContent {
-        width: calc(100% - 2rem) !important;
-    }
-
-    #itemDetailPage .detailSection {
-        grid-template-columns: 1fr !important;
-    }
-
-    #itemDetailPage .detailSectionContent,
-    #itemDetailPage .itemDetailsGroup,
-    #itemDetailPage .trackSelections {
-        grid-column: 1 !important;
-    }
-
-    #itemDetailPage .detailSectionContent {
-        padding: 1.15rem !important;
-    }
-
-    #itemDetailPage .detailsGroupItem > .label {
-        flex-basis: 5.5rem !important;
-    }
-}
-
 
 /* ==========================================================================
-   REDUCED MOTION
+   CottageFin palette overrides
    ========================================================================== */
 
-@media (prefers-reduced-motion: reduce) {
-    *,
-    *::before,
-    *::after {
-        scroll-behavior: auto !important;
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
-    }
+@import url("https://fonts.googleapis.com/css2?family=Berkshire+Swash&family=Lora:wght@400;500;600;700&display=swap");
+
+html,
+body,
+.backgroundContainer{
+    background:#3f210f !important;
+    color:#fff4dc !important;
 }
 
-
-
-/* ==========================================================================
-   READABLE UI TEXT
-   Keep dense utility text legible while headings retain the cosy display face.
-   ========================================================================== */
-
-.emby-input,
-.emby-select,
-.emby-textarea,
-.listItem,
-.cardText,
-.cardText-first,
-.cardText-secondary,
-.secondaryText,
-.fieldDescription,
-.itemOverview,
-.overview,
-.mediaInfoItem,
-.metadata {
-    font-family: "Lora", Georgia, serif !important;
+.skinHeader,
+.skinHeader-blurred:not(.osdHeader){
+    background:#f8e9c7 !important;
+    color:#442712 !important;
 }
 
-.sectionTitleTextButton,
-.sectionTitleTextButton *,
+.skinHeader *,
+.headerButton,
+.headerTabs *{
+    color:#442712 !important;
+}
+
+.mainDrawer,
+.drawer-open{
+    background:#fff4d8 !important;
+}
+
+.navMenuOption,
+.listItem{
+    color:#442712 !important;
+}
+
+.navMenuOption-selected{
+    background:#ead2a3 !important;
+    border-left:4px solid #b77d2d !important;
+}
+
+.cardScalable{
+    border-color:rgba(104,64,32,.35) !important;
+    box-shadow:none !important;
+}
+
+.card:hover .cardScalable{
+    box-shadow:none !important;
+}
+
+.cardOverlayFab-primary{
+    display:none !important;
+}
+
+.innerCardFooter,
+.chapterThumbTextContainer{
+    text-shadow:none !important;
+}
+
 .pageTitle,
-.sectionTitle,
-.itemName-primary,
-.detailPagePrimaryContainer h1,
-.detailPagePrimaryContainer h2,
-.detailPageContent h1,
-.detailPageContent h2 {
-    font-family: "Chocho Aura Demo", "Chocho Aura", "Berkshire Swash", Georgia, serif !important;
+h1,
+h2,
+.sectionTitle{
+    font-family:"Berkshire Swash", Georgia, serif !important;
+    color:#fff4dc !important;
 }
 
-/* ==========================================================================
-   FLAT FINISH
-   Prevent Jellyfin defaults and component states from restoring shadows.
-   ========================================================================== */
-
-*,
-*::before,
-*::after {
-    box-shadow: none !important;
-    text-shadow: none !important;
+.detailButton,
+.btnPlay{
+    background:#684020 !important;
+    color:#fff4dc !important;
+    border-color:#9f744d !important;
 }
 
+.itemProgressBarForeground{
+    background:#d5a044 !important;
+}
