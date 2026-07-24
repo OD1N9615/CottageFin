@@ -1,0 +1,724 @@
+/*
+ * CottageFin
+ * ElegantFin layout + CottageFin palette
+ *
+ * This file imports ElegantFin exactly once, then changes colours only.
+ * No CottageFin file imports another CottageFin file.
+ */
+
+@import url("https://cdn.jsdelivr.net/gh/lscambo13/ElegantFin@main/Theme/ElegantFin-jellyfin-theme-build-latest-minified.css");
+
+:root {
+    --darkerGradientPoint: #2A1B12;
+    --lighterGradientPoint: #603A29;
+    --borderColor: rgba(226, 208, 178, 0.88);
+    --headerColor: rgba(226, 208, 178, 0.96);
+    --drawerColor: rgba(226, 208, 178, 0.97);
+    --lighterBorderColor: rgba(241, 228, 204, 0.58);
+    --selectorBackgroundColor: #603A29;
+    --btnSubmitColor: #B88953;
+    --btnSubmitBorderColor: #D1AA75;
+    --checkboxCheckedBgColor: #B88953;
+    --hoverGradient: linear-gradient(
+        130deg,
+        rgba(226, 208, 178, 0.20) 20%,
+        rgba(226, 208, 178, 0.08) 42%
+    );
+
+    --cottage-espresso: #2A1B12;
+    --cottage-cinnamon: #603A29;
+    --cottage-paper: #E2D0B2;
+    --cottage-paper-light: #F1E4CC;
+    --cottage-gold: #B88953;
+}
+
+/* Main brown atmosphere */
+html,
+body,
+.backgroundContainer,
+.nowPlayingPlaylist,
+.nowPlayingContextMenu {
+    background: linear-gradient(
+        0deg,
+        var(--cottage-espresso),
+        var(--cottage-cinnamon)
+    ) !important;
+}
+
+/*
+ * Keep ElegantFin's detail-page geometry untouched.
+ * This only recolours its cinematic fade.
+ */
+.detailPageWrapperContainer {
+    background:
+        linear-gradient(
+            0deg,
+            var(--cottage-espresso) 0%,
+            rgba(42, 27, 18, 0.98) 34%,
+            rgba(96, 58, 41, 0.72) 66%,
+            rgba(96, 58, 41, 0.18) 88%,
+            transparent 100%
+        ) !important;
+}
+
+.noBackdropTransparency .detailPageSecondaryContainer {
+    background-color: transparent !important;
+}
+
+/* A gentle cinnamon wash over the banner without hiding the artwork */
+.itemBackdrop {
+    background-color: var(--cottage-cinnamon) !important;
+    background-blend-mode: soft-light !important;
+}
+
+/* Antique-paper header and drawer */
+.skinHeader:not(.osdHeader),
+.skinHeader-blurred:not(.osdHeader),
+.mainDrawer,
+.drawer-open,
+.MuiAppBar-root,
+.MuiDrawer-paper {
+    background-color: var(--headerColor) !important;
+    border-color: var(--cottage-paper-light) !important;
+    border-width: 1.5px !important;
+}
+
+/* Espresso navigation text and icons */
+.skinHeader:not(.osdHeader),
+.skinHeader:not(.osdHeader) *,
+.mainDrawer,
+.mainDrawer *,
+.drawer-open,
+.drawer-open *,
+.MuiAppBar-root,
+.MuiAppBar-root *,
+.MuiDrawer-paper,
+.MuiDrawer-paper * {
+    color: var(--cottage-espresso) !important;
+}
+
+/* Navigation states */
+.navMenuOption-selected {
+    background-color: rgba(96, 58, 41, 0.20) !important;
+    border-color: rgba(96, 58, 41, 0.34) !important;
+}
+
+.navMenuOption:hover,
+.listItem:hover {
+    background-color: rgba(96, 58, 41, 0.11) !important;
+}
+
+/* Borders and surfaces */
+.cardScalable,
+.cardOverlayContainer,
+.visualCardBox,
+.paperList,
+.itemDetailsGroup,
+.dialog,
+.emby-select-withcolor,
+.emby-select,
+.emby-input,
+.emby-textarea,
+.detailButton,
+.btnPlay,
+.searchfields-icon,
+.mediaInfoOfficialRating,
+.sliderBubble {
+    border-color: var(--cottage-paper-light) !important;
+    border-width: 1.5px !important;
+}
+
+/* Dark controls with warm cream text */
+.emby-select-withcolor,
+.emby-select,
+.emby-input,
+.emby-textarea {
+    background-color: var(--cottage-cinnamon) !important;
+    color: var(--cottage-paper-light) !important;
+}
+
+.dialog,
+.selectionCommandsPanel {
+    background-color: rgba(42, 27, 18, 0.96) !important;
+}
+
+/* Buttons and progress */
+.button-submit {
+    background-color: var(--cottage-gold) !important;
+    border-color: #D1AA75 !important;
+    color: var(--cottage-espresso) !important;
+}
+
+.itemProgressBar {
+    background-color: rgba(226, 208, 178, 0.18) !important;
+}
+
+.itemProgressBarForeground {
+    background-color: var(--cottage-gold) !important;
+}
+
+.countIndicator,
+.fullSyncIndicator,
+.mediaSourceIndicator {
+    background-color: var(--cottage-gold) !important;
+}
+
+/* Cream content text on dark surfaces */
+.detailPageWrapperContainer,
+.detailPageSecondaryContainer,
+.detailSection,
+.detailSectionContent {
+    color: var(--cottage-paper-light);
+}
+
+/* Clear remote and keyboard focus, without moving or resizing cards */
+.card:focus .cardScalable,
+.card:focus-within .cardScalable,
+.card.focused .cardScalable,
+.card[data-focusvisible-added] .cardScalable,
+.card[data-focus-visible-added] .cardScalable {
+    outline: 3px solid var(--cottage-gold) !important;
+    outline-offset: 3px !important;
+    box-shadow: 0 0 0 6px rgba(184, 137, 83, 0.28) !important;
+}
+
+/* Warm watched state */
+.playedIndicator,
+.playstatebutton-icon-played {
+    color: #A9C184 !important;
+}
+
+.playedIndicator {
+    background-color: #7F995F !important;
+}
+
+/* CottageFin footer label */
+.dashboardFooter::after {
+    content: "CottageFin";
+    font-size: .6em;
+    opacity: .55;
+}
+
+/* =========================================================
+   Top bar correction
+   Removes ElegantFin's blue overlay and restores translucency
+   ========================================================= */
+
+/* Stop inherited gradients/images from tinting the cream header */
+.skinHeader:not(.osdHeader),
+.skinHeader-blurred:not(.osdHeader),
+.skinHeader-withBackground:not(.osdHeader),
+.skinHeader.semiTransparent:not(.osdHeader),
+.MuiAppBar-root {
+    background-image: none !important;
+    background: rgba(226, 208, 178, 0.74) !important;
+    border-bottom: 1px solid rgba(42, 27, 18, 0.22) !important;
+    box-shadow: 0 0.35em 1.2em rgba(42, 27, 18, 0.12) !important;
+    -webkit-backdrop-filter: blur(14px) saturate(115%) !important;
+    backdrop-filter: blur(14px) saturate(115%) !important;
+}
+
+/* Keep the scrolled/header-pinned state translucent too */
+.headroom--pinned .skinHeader:not(.osdHeader),
+.headroom--not-top .skinHeader:not(.osdHeader),
+.skinHeader-blurred.headroom--pinned:not(.osdHeader),
+.skinHeader-blurred.headroom--not-top:not(.osdHeader) {
+    background-image: none !important;
+    background-color: rgba(226, 208, 178, 0.78) !important;
+    -webkit-backdrop-filter: blur(16px) saturate(115%) !important;
+    backdrop-filter: blur(16px) saturate(115%) !important;
+}
+
+/* Prevent pseudo-elements from adding ElegantFin's coloured wash */
+.skinHeader:not(.osdHeader)::before,
+.skinHeader:not(.osdHeader)::after,
+.MuiAppBar-root::before,
+.MuiAppBar-root::after {
+    background: none !important;
+    background-image: none !important;
+}
+
+/* =========================================================
+   Card footer
+   Extends each poster card to contain its title/subtitle text
+   ========================================================= */
+
+/* Turn the whole card box into one rounded, enclosed object */
+.cardBox {
+    background: rgba(42, 27, 18, 0.74) !important;
+    border: 1.5px solid rgba(226, 208, 178, 0.90) !important;
+    border-radius: 1em !important;
+    overflow: hidden !important;
+    box-shadow: 0 0.25em 0.8em rgba(42, 27, 18, 0.22) !important;
+}
+
+/* Let the artwork form the upper half of the unified card */
+.cardBox .cardScalable {
+    border: 0 !important;
+    border-radius: 1em 1em 0 0 !important;
+    overflow: hidden !important;
+}
+
+.cardBox .cardImageContainer {
+    border-radius: 1em 1em 0 0 !important;
+}
+
+/* Create a compact footer beneath the artwork */
+.cardBox .cardText {
+    margin: 0 !important;
+    padding-left: 0.8em !important;
+    padding-right: 0.8em !important;
+    color: var(--cottage-paper-light) !important;
+}
+
+.cardBox .cardText-first {
+    padding-top: 0.58em !important;
+    padding-bottom: 0.12em !important;
+    font-weight: 600 !important;
+}
+
+.cardBox .cardText-secondary,
+.cardBox .cardText-secondary + .cardText {
+    padding-top: 0 !important;
+    padding-bottom: 0.62em !important;
+    color: rgba(226, 208, 178, 0.78) !important;
+}
+
+/* Single-line titles still receive balanced footer spacing */
+.cardBox .cardText-first:last-child {
+    padding-bottom: 0.62em !important;
+}
+
+/* Keep hover/focus attached to the whole card instead of only the image */
+.card:hover .cardBox,
+.card:focus .cardBox,
+.card:focus-within .cardBox,
+.card.focused .cardBox {
+    border-color: var(--cottage-gold) !important;
+}
+
+.card:focus .cardScalable,
+.card:focus-within .cardScalable,
+.card.focused .cardScalable,
+.card[data-focusvisible-added] .cardScalable,
+.card[data-focus-visible-added] .cardScalable {
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+.card:focus .cardBox,
+.card:focus-within .cardBox,
+.card.focused .cardBox,
+.card[data-focusvisible-added] .cardBox,
+.card[data-focus-visible-added] .cardBox {
+    outline: 3px solid var(--cottage-gold) !important;
+    outline-offset: 3px !important;
+    box-shadow: 0 0 0 6px rgba(184, 137, 83, 0.28) !important;
+}
+
+
+
+
+
+
+
+
+/* =========================================================
+   CottageFin v8.2
+   Softer framed cards
+   ========================================================= */
+
+/* Slightly darker, richer footer */
+.cardBox{
+    background: rgba(32, 20, 13, 0.82) !important;
+    box-shadow:
+        inset 0 1px 0 rgba(241,228,204,0.22),
+        0 0.25em 0.8em rgba(42,27,18,0.24) !important;
+}
+
+/* Subtle inner cream highlight for a carved look */
+.cardScalable{
+    box-shadow:
+        inset 0 0 0 1px rgba(241,228,204,0.16) !important;
+}
+
+/* Round the bottom of the poster artwork so it flows into the footer */
+.cardBox .cardScalable,
+.cardBox .cardImageContainer,
+.cardBox .cardImage{
+    border-radius: 1em !important;
+}
+
+/* Ensure the footer still forms one continuous card */
+.cardBox{
+    overflow:hidden !important;
+    border-radius:1em !important;
+}
+
+/* Slightly stronger outer border */
+.cardBox{
+    border:1.5px solid rgba(241,228,204,0.95) !important;
+}
+
+/* =========================================================
+   CottageFin 4.0
+   Depth, hierarchy, material contrast and restrained accents
+   ========================================================= */
+
+/* ---------- 1. Visual hierarchy ---------- */
+
+/* Media cards remain the strongest framed objects */
+.cardBox {
+    border-color: rgba(241, 228, 204, 0.96) !important;
+    box-shadow:
+        inset 0 1px 0 rgba(241, 228, 204, 0.20),
+        0 0.35em 1.1em rgba(20, 12, 8, 0.34),
+        0 0.08em 0.22em rgba(20, 12, 8, 0.50) !important;
+}
+
+/* Secondary surfaces recede */
+.dialog,
+.visualCardBox,
+.paperList,
+.itemDetailsGroup,
+.emby-select-withcolor,
+.emby-select,
+.emby-input,
+.emby-textarea,
+.detailButton,
+.btnPlay,
+.searchfields-icon,
+.mediaInfoOfficialRating,
+.sliderBubble {
+    border-color: rgba(226, 208, 178, 0.42) !important;
+    box-shadow: none !important;
+}
+
+/* Buttons lose the heavy boxed feeling */
+.detailButton,
+.btnPlay,
+.searchfields-icon,
+.mediaInfoOfficialRating {
+    background-color: rgba(226, 208, 178, 0.035) !important;
+    border-width: 1px !important;
+}
+
+/* ---------- 2. Restrain the cream ---------- */
+
+/* Cream is now primarily for surfaces and readable text */
+.skinHeader:not(.osdHeader),
+.skinHeader-blurred:not(.osdHeader),
+.mainDrawer,
+.drawer-open,
+.MuiAppBar-root,
+.MuiDrawer-paper {
+    border-color: rgba(42, 27, 18, 0.20) !important;
+}
+
+/* Use gold for active and selected states */
+.navMenuOption-selected,
+.emby-tab-button-active,
+.emby-tab-button[data-is-selected="true"] {
+    color: var(--cottage-gold) !important;
+}
+
+.navMenuOption-selected {
+    background-color: rgba(184, 137, 83, 0.18) !important;
+    border-color: rgba(184, 137, 83, 0.34) !important;
+}
+
+.emby-tab-button-active::after,
+.emby-tab-button[data-is-selected="true"]::after,
+.emby-tabs-slider {
+    background-color: var(--cottage-gold) !important;
+}
+
+/* Softer card text hierarchy */
+.cardBox .cardText-first {
+    color: var(--cottage-paper-light) !important;
+}
+
+.cardBox .cardText-secondary,
+.cardBox .cardText-secondary + .cardText {
+    color: rgba(226, 208, 178, 0.66) !important;
+}
+
+/* ---------- 3. Richer brown variation ---------- */
+
+/* Layer the page background instead of using one flat brown */
+html,
+body,
+.backgroundContainer,
+.nowPlayingPlaylist,
+.nowPlayingContextMenu {
+    background:
+        radial-gradient(circle at 18% 12%, rgba(112, 72, 45, 0.18), transparent 34%),
+        radial-gradient(circle at 82% 18%, rgba(78, 90, 55, 0.08), transparent 30%),
+        linear-gradient(180deg, #4A2E20 0%, #332015 42%, #24170F 100%) !important;
+}
+
+/* Subtle walnut variation in card footers */
+.cardBox {
+    background:
+        linear-gradient(
+            180deg,
+            rgba(43, 27, 18, 0.94) 0%,
+            rgba(31, 19, 13, 0.96) 100%
+        ) !important;
+}
+
+/* Detail page fade with more tonal depth */
+.detailPageWrapperContainer {
+    background:
+        linear-gradient(
+            0deg,
+            #24170F 0%,
+            rgba(42, 27, 18, 0.99) 34%,
+            rgba(76, 46, 31, 0.78) 64%,
+            rgba(96, 58, 41, 0.24) 86%,
+            transparent 100%
+        ) !important;
+}
+
+/* Warm, slightly leathery secondary panels */
+.dialog,
+.selectionCommandsPanel,
+.itemDetailsGroup {
+    background-color: rgba(37, 23, 15, 0.94) !important;
+}
+
+/* ---------- 5. Make cards sit on the page ---------- */
+
+/* Ambient depth beneath cards */
+.card {
+    position: relative;
+}
+
+.card::after {
+    content: "";
+    position: absolute;
+    left: 8%;
+    right: 8%;
+    bottom: -0.45em;
+    height: 0.9em;
+    border-radius: 50%;
+    background: rgba(14, 8, 5, 0.34);
+    filter: blur(0.55em);
+    opacity: 0.72;
+    pointer-events: none;
+    z-index: -1;
+    transition: opacity 140ms ease, transform 140ms ease;
+}
+
+.card:hover::after,
+.card:focus-within::after,
+.card.focused::after {
+    opacity: 0.92;
+    transform: scaleX(1.04);
+}
+
+/* Gentle lift, without changing the card design */
+.cardBox {
+    transition:
+        transform 140ms ease,
+        box-shadow 140ms ease,
+        border-color 140ms ease !important;
+}
+
+.card:hover .cardBox,
+.card:focus-within .cardBox,
+.card.focused .cardBox {
+    transform: translateY(-0.12em);
+    box-shadow:
+        inset 0 1px 0 rgba(241, 228, 204, 0.24),
+        0 0.55em 1.35em rgba(20, 12, 8, 0.40),
+        0 0.10em 0.28em rgba(20, 12, 8, 0.55) !important;
+}
+
+/* Keep focus readable but less neon */
+.card:focus .cardBox,
+.card:focus-within .cardBox,
+.card.focused .cardBox,
+.card[data-focusvisible-added] .cardBox,
+.card[data-focus-visible-added] .cardBox {
+    outline: 2px solid var(--cottage-gold) !important;
+    outline-offset: 3px !important;
+    box-shadow:
+        0 0 0 4px rgba(184, 137, 83, 0.18),
+        0 0.55em 1.35em rgba(20, 12, 8, 0.40) !important;
+}
+
+/* ---------- Small finishing touches ---------- */
+
+/* Reduce visual noise in miscellaneous borders */
+.listItem-border,
+.detailsGroupItem {
+    border-color: rgba(226, 208, 178, 0.16) !important;
+}
+
+/* Warm gold remains the singular accent */
+.itemProgressBarForeground,
+.button-submit,
+.countIndicator,
+.fullSyncIndicator,
+.mediaSourceIndicator {
+    background-color: var(--cottage-gold) !important;
+}
+
+/* =========================================================
+   CottageFin 4.1
+   Default-style Jellyfin header
+   ========================================================= */
+
+/*
+ * Return the toolbar to ordinary Jellyfin proportions.
+ * The header is now a simple solid strip, slightly lighter
+ * than the upper portion of the CottageFin background.
+ */
+.skinHeader:not(.osdHeader),
+.skinHeader-blurred:not(.osdHeader),
+.skinHeader-withBackground:not(.osdHeader),
+.skinHeader.semiTransparent:not(.osdHeader),
+.headroom--pinned .skinHeader:not(.osdHeader),
+.headroom--not-top .skinHeader:not(.osdHeader) {
+    background: #563724 !important;
+    background-image: none !important;
+    border: 0 !important;
+    box-shadow: none !important;
+    -webkit-backdrop-filter: none !important;
+    backdrop-filter: none !important;
+}
+
+/* Restore a conventional Jellyfin toolbar height and spacing */
+.skinHeader:not(.osdHeader) .headerTop,
+.skinHeader-blurred:not(.osdHeader) .headerTop {
+    height: 4em !important;
+    min-height: 4em !important;
+    padding: 0 .75em !important;
+    box-sizing: border-box !important;
+}
+
+/* Standard-sized, vertically centred toolbar groups */
+.skinHeader .headerLeft,
+.skinHeader .headerRight {
+    display: flex !important;
+    align-items: center !important;
+    height: 100% !important;
+    padding: 0 !important;
+}
+
+/* Standard Jellyfin-style button footprint */
+.skinHeader .headerButton,
+.skinHeader .paper-icon-button-light {
+    width: 3em !important;
+    height: 3em !important;
+    min-width: 3em !important;
+    min-height: 3em !important;
+    margin: 0 .1em !important;
+    padding: .5em !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    align-self: center !important;
+    box-sizing: border-box !important;
+}
+
+/* Restore normal icon and logo scale */
+.skinHeader .material-icons {
+    font-size: 1.7rem !important;
+    line-height: 1 !important;
+}
+
+.skinHeader .headerLogo {
+    height: 2em !important;
+    max-height: 2em !important;
+    align-self: center !important;
+}
+
+.skinHeader .pageTitle {
+    margin: 0 .35em !important;
+    line-height: 1.2 !important;
+    align-self: center !important;
+}
+
+/* Light text/icons against the walnut header */
+.skinHeader:not(.osdHeader),
+.skinHeader:not(.osdHeader) * {
+    color: var(--cottage-paper-light) !important;
+}
+
+/* Keep selected navigation understated and CottageFin-gold */
+.skinHeader .emby-tab-button-active,
+.skinHeader .emby-tab-button[data-is-selected="true"] {
+    color: var(--cottage-gold) !important;
+}
+
+/* Prevent old pseudo-element washes from returning */
+.skinHeader:not(.osdHeader)::before,
+.skinHeader:not(.osdHeader)::after {
+    content: none !important;
+    display: none !important;
+}
+
+/* =========================================================
+   CottageFin 4.2
+   Lighter, quieter cards
+   ========================================================= */
+
+/* 1 & 4. Reduce visual weight */
+.cardBox{
+    border: 1.2px solid rgba(241,228,204,0.78) !important;
+    box-shadow:
+        inset 0 1px 0 rgba(241,228,204,0.10),
+        0 0.22em 0.75em rgba(20,12,8,0.22),
+        0 0.05em 0.18em rgba(20,12,8,0.32) !important;
+}
+
+/* Softer ambient shadow */
+.card::after{
+    background: rgba(14,8,5,0.20) !important;
+    opacity: 0.50 !important;
+    filter: blur(0.7em) !important;
+}
+
+/* More restrained hover */
+.card:hover .cardBox,
+.card:focus-within .cardBox,
+.card.focused .cardBox{
+    box-shadow:
+        inset 0 1px 0 rgba(241,228,204,0.12),
+        0 0.38em 0.95em rgba(20,12,8,0.28),
+        0 0.08em 0.22em rgba(20,12,8,0.38) !important;
+}
+
+/* 3. Let the artwork be the hero again */
+.cardBox{
+    background: linear-gradient(
+        180deg,
+        rgba(48,31,21,0.90) 0%,
+        rgba(41,26,18,0.93) 100%
+    ) !important;
+}
+
+.cardText-first{
+    color: rgba(241,228,204,0.96) !important;
+}
+
+.cardText-secondary,
+.cardText-secondary + .cardText{
+    color: rgba(226,208,178,0.58) !important;
+}
+
+/* =========================================================
+   CottageFin 4.2.1
+   Warmer, lighter card footer
+   ========================================================= */
+
+.cardBox{
+    background: linear-gradient(
+        180deg,
+        rgba(94, 60, 40, 0.94) 0%,
+        rgba(82, 52, 35, 0.96) 100%
+    ) !important;
+}
+
